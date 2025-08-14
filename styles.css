@@ -1,0 +1,62 @@
+/* design system */
+
+/*  */
+
+
+
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/*  */
+
+
+/* box */
+.box {
+    width: 400px;
+    height: 400px;
+    background-color: chartreuse;
+    position: relative;
+}
+/*  */
+
+/* circles */
+.circle {
+    width: 100px;
+    height: 100px;
+
+    background-color: transparent;
+    border: 1px solid firebrick;
+    border-radius: 50%;
+
+    position: absolute;
+}
+.top-right {
+    right: 0;
+}
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+.top-left {
+    left: 0;
+}
+.bottom-left {
+    bottom: 0;
+}
+/*  */
+
+
+/* sliders */
+.radius-picker {
+    width: 300px;   
+}
+/*  */
