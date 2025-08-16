@@ -1,0 +1,23 @@
+.knobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+fieldset {
+    border: var(--spacing-12_5) solid black;
+    padding: var(--spacing-50);
+}
+
+.measurement-units, .rect-dimensions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: var(--spacing-50);
+}
+
+#rect-width-input, #rect-height-input {
+    border: var(--spacing-12_5) solid black;
+    width: 6.3rem; /* 100.8px */
+    height: 2.5rem; /* 40px */
+}

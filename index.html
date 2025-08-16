@@ -12,22 +12,37 @@
                 
                 <div class="knobs">
                     
-                    <div class="settings">
-                        <h2 class="title">Settings</h2>
-                        <fieldset>
-                            <legend>Measurment Unit</legend>
-                            <input type="radio" name="unit" value="px" id="px" checked required> <label for="px">px</label>
-                            <input type="radio" name="unit" value="rem" id="rem"> <label for="rem">rem</label>
-                            <input type="radio" name="unit" value="percentage" id="percentage"> <label for="percentage">%</label>
+                    <section class="settings">
+                        <h2 class="title text-preset-2">Settings</h2>
+
+                        <fieldset class="measurement-units">
+                            <legend class="text-preset-3">Measurment Unit</legend>
+                            <div>
+                                <input type="radio" name="unit" value="px" id="px" checked required> 
+                                <label class="text-preset-4" for="px">Pixel</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="unit" value="rem" id="rem"> 
+                                <label class="text-preset-4" for="rem">REM</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="unit" value="percentage" id="percentage"> 
+                                <label class="text-preset-4" for="percentage">Percentage</label>
+                            </div>
                         </fieldset>
 
-                        <fieldset>
-                            <legend>Rectangle Dimensions</legend>
-                            <input class="rect-dimension" type="number" id="width" placeholder="400px" required>
-                            <input class="rect-dimension" type="number" id="height" placeholder="500px" required>
+                        <fieldset class="rect-dimensions">
+                            <legend class="text-preset-3">Rectangle Dimensions</legend>
+                            <div>
+                                <input class="text-preset-4" type="number" id="rect-width-input" placeholder="400" required>
+                                <label class="text-preset-4" for="rect-width-input">Pixel</label>
+                            </div>
+                            <div>
+                                <input class="text-preset-4" type="number" id="rect-height-input" placeholder="500" required>
+                                <label class="text-preset-4" for="rect-height-input">Pixel</label>
+                            </div>
                         </fieldset>
-
-                    </div>
+                    </section>
                     
                     <div class="top-left-ellipse-knobs">
                         <h2 class="title">Top Left ellipse</h2>
