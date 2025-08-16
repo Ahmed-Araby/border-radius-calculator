@@ -1,20 +1,64 @@
-
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+
     </head>
+
     <body>
         <main>
-            <input type="range" min="10" max="100" value="50" step="1" id="top-left-circle-radius-picker" class="radius-picker">
-            
-            <div class="box" id="style-target-box">
-                <div class="circle top-left" id="top-left-circle"></div>
-                <div class="circle top-right" id="top-right-circle"></div>
-                <div class="circle bottom-right" id="bottom-right-circle"></div>
-                <div class="circle bottom-left" id="bottom-left-circle"></div>
+            <div class="split-screen h-flex">
+                
+                <div class="knobs">
+                    <div class="settings">
+                        <h2 class="title">Settings</h2>
+                        <fieldset>
+                            <legend>Measurment Unit</legend>
+                            <input type="radio" name="unit" value="px" id="px" checked required> <label for="px">px</label>
+                            <input type="radio" name="unit" value="rem" id="rem"> <label for="rem">rem</label>
+                            <input type="radio" name="unit" value="percentage" id="percentage"> <label for="percentage">%</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Rectangle Dimensions</legend>
+                            <input class="rect-dimension" type="number" id="width" placeholder="400px" required>
+                            <input class="rect-dimension" type="number" id="height" placeholder="500px" required>
+                        </fieldset>
+
+                    </div>
+                    
+                    <div class="top-left-corner-knobs">
+                        <h2 class="title">Top Left Corner</h2>
+
+
+                        
+
+                        <div class="ellipse-horizontal-semi-axis">
+                            <label class="label" for="top-left-corner-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
+                            <input type="range" class="semi-axis-slider" id="top-left-corner-horizontal-sami-axis-slider">
+
+                            <input type="number" class="semi-axis-value" id="top-left-corner-horizontal-sami-axis-value" readonly>
+                            <label class="label sami-axis-measurement-unit" for="top-left-corner-horizontal-sami-axis-value">px</label>
+                        </div>
+                        <div class="ellipse-vertical-semi-axis">
+                            <label class="label" for="top-left-corner-vertical-sami-axis-slider">Vertical Semi Axis</label>
+                            <input type="range" class="semi-axis-slider" id="top-left-corner-vertical-sami-axis-slider"> 
+                            
+                            <input type="number" class="semi-axis-value" id="top-left-corner-vertical-sami-axis-value" readonly>
+                            <label class="label sami-axis-measurement-unit" for="top-left-corner-vertical-sami-axis-value">px</label>
+                        </div>
+                        <div class="ellipse"></div>
+                        <div class="css-corner-radius-property">
+                            border-top-left-radius: 33px 44px;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="v-line"> </div>
+
+                <div class="canvas">
+                    <div class="rect"></div>
+                </div>
             </div>
         </main>
-
     </body>
-    <script src="app.js"></script>
+
 </html>
