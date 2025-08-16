@@ -1,7 +1,57 @@
 /* design system */
+:root {
+    /* colors */
+    --color-pink-transparent: rgb(251 175 240 / 80%);
+    --color-turquaz: rgb(104 199 205);
+    --color-gray: rgb(243 244 246);
 
-/*  */
+    /* spacing */
+    --spacing-100: 1rem; /* 16px */
+    --spacing-150: 1.5rem; /* 24px */
+    --spacing-500: 5rem; /* 80px */
+    --spacing-12_5: 0.125rem; /* 2px */
+}   
 
+/* typography */
+@font-face {
+    font-family: "Menlo-Regular";
+    src: url("./assets/fonts/menlo/Menlo-Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Menlo-Bold";
+    src: url("./assets/fonts/menlo/Menlo-Bold.ttf");
+    font-weight: 700;
+}
+
+.text-preset-1 {
+    font-family: "Menlo-Bold", monospace;
+    font-weight: 700;
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+    color: black;
+}
+.text-preset-2{
+    font-family: "Menlo-Bold", monospace;
+    font-weight: 700;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; 
+    color: black;
+}
+.text-preset-3{
+    font-family: "Menlo-Regular", monospace;
+    font-weight: 400;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; 
+    color: rgb(31 41 55);
+}
+.text-preset-4{
+    font-family: "Menlo-Regular", monospace;
+    font-weight: 400;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem;
+    color: black;
+}
 
 
 /* global styles */
@@ -11,52 +61,6 @@
     box-sizing: border-box;
 }
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    inline-size: 100vi;
+    block-size: 100vb;
 }
-/*  */
-
-
-/* box */
-.box {
-    width: 400px;
-    height: 400px;
-    background-color: chartreuse;
-    position: relative;
-}
-/*  */
-
-/* circles */
-.circle {
-    width: 100px;
-    height: 100px;
-
-    background-color: transparent;
-    border: 1px solid firebrick;
-    border-radius: 50%;
-
-    position: absolute;
-}
-.top-right {
-    right: 0;
-}
-.bottom-right {
-    bottom: 0;
-    right: 0;
-}
-.top-left {
-    left: 0;
-}
-.bottom-left {
-    bottom: 0;
-}
-/*  */
-
-
-/* sliders */
-.radius-picker {
-    width: 300px;   
-}
-/*  */
