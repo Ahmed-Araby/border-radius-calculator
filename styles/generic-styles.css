@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    inline-size: 100vi;
+    block-size: 100vb;
+}
+
+
+
+.split-screen {
+    height: 100%;
+    width: 100%;
+    padding: var(--spacing-150);
+}
+
+.h-flex {
+    display: flex;
+
+}
+.v-line {
+    width: var(--spacing-12_5);
+    margin-inline: var(--spacing-150);
+    background-color: var(--color-black);
+}
