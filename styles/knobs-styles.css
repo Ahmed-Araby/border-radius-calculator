@@ -36,7 +36,7 @@ fieldset {
 .ellipse-semi-axes {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
-    row-gap: var(--spacing-50);
+    gap: var(--spacing-50);
     align-items: center;
 }
 
