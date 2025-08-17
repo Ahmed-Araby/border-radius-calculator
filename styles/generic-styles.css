@@ -12,13 +12,24 @@ body {
     max-inline-size: 100%;
     min-block-size: 100vb;
 }
+main > *:not(:last-child) {
+    border-bottom: var(--spacing-12_5) solid black;
+}
+main > *:not(:first-child) {
+    border-top: var(--spacing-12_5) solid black;
+}
 
-
+header {
+    padding: var(--spacing-150) 0 var(--spacing-50);
+    text-align: center;
+}
+.logo {
+    height: 4rem; /* 64px */
+}
 .split-screen {
     min-block-size: 100vb;
     max-inline-size: 100%;
     padding: var(--spacing-150);
-    border-bottom: var(--spacing-12_5) solid black;
 }
 
 .h-flex {
@@ -35,5 +46,4 @@ body {
     height: 6rem; /* 144px */
     padding: var(--spacing-150) 0;
     text-align: center;
-    border-top: var(--spacing-12_5) solid black;
 }
