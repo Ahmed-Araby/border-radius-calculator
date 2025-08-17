@@ -16,10 +16,13 @@ fieldset {
     padding: var(--spacing-50);
 }
 
-.measurement-units, .rect-dimensions {
+.measurement-units-container, .rect-dimensions {
     display: flex;
     justify-content: space-evenly;
     gap: var(--spacing-50);
+}
+.measurement-unit {
+    accent-color: black;
 }
 
 #rect-width-input, #rect-height-input {
