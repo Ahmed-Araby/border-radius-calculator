@@ -55,9 +55,10 @@ fieldset {
     border: var(--spacing-12_5) solid black;
     padding: var(--spacing-50);
 }
-.css-corner-radius-property {
+.css-declaration {
     display: block;
     background-color: var(--color-gray);
+
     padding: var(--spacing-50);
     margin-top: var(--spacing-50);
 
@@ -68,11 +69,17 @@ fieldset {
     font-size: 1.875rem;
     position: absolute;
     right: var(--spacing-50);
-    bottom: 0;
+    top: 0;
 }
 .copy-btn:hover {
     cursor: pointer;
 }
 .copy-btn:active {
     transform: scale(0.8);
+}
+
+.css-border-radius-properties {
+    margin-top: 0;
+    padding: var(--spacing-100);
+    height: 6.5rem;
 }
