@@ -1,10 +1,16 @@
 .knobs {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
+    gap: var(--spacing-150);
 }
 
+.knobs > * {
+    padding-bottom: var(--spacing-50);
+    border-bottom: var(--spacing-12_5) solid black;
+}
 
+/* settings */
 fieldset {
     border: var(--spacing-12_5) solid black;
     padding: var(--spacing-50);
@@ -20,4 +26,47 @@ fieldset {
     border: var(--spacing-12_5) solid black;
     width: 6.3rem; /* 100.8px */
     height: 2.5rem; /* 40px */
+}
+
+/* ellipse corner */
+.ellipse-semi-axes {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    row-gap: var(--spacing-50);
+    align-items: center;
+}
+
+.slider-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.semi-axis-value {
+    justify-self: end;
+    text-align: end;
+
+    min-width: 7rem; /* 112px */
+    border: var(--spacing-12_5) solid black;
+    padding: var(--spacing-50);
+}
+.css-corner-radius-property {
+    display: block;
+    background-color: var(--color-gray);
+    padding: var(--spacing-50);
+    margin-top: var(--spacing-50);
+
+    position: relative;
+}
+.copy-btn {
+    all: initial;
+    font-size: 1.875rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.copy-btn:hover {
+    cursor: pointer;
+}
+.copy-btn:active {
+    transform: scale(0.8);
 }
