@@ -40,7 +40,9 @@ fieldset {
     display: flex;
     justify-content: space-between;
 }
-
+.semi-axis-slider {
+    accent-color: black;
+}
 .semi-axis-value {
     justify-self: end;
     text-align: end;
