@@ -23,5 +23,5 @@ body {
 .v-line {
     width: var(--spacing-12_5);
     margin-inline: var(--spacing-150);
-    background-color: var(--color-black);
+    background-color: black;
 }
