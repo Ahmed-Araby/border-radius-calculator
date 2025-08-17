@@ -1,12 +1,30 @@
-console.log("here");
-const input = document.getElementById("top-left-circle-radius-picker");
-const topLeftCircleBox = document.getElementById("top-left-circle");
-const styleTargetBox = document.getElementById("style-target-box");
+console.log("init Border Radius Calculator App");
 
-input.addEventListener("input", (event) => {
-  console.log(`Input value changed to: ${event.target.value}`);
-  const radius = event.target.value;
-  topLeftCircleBox.style.width = `${radius*2}px`;
-  topLeftCircleBox.style.height = `${radius*2}px`;
-  styleTargetBox.style.borderTopLeftRadius = `${radius}px`;
-});
+
+const CSS_SELECTORS = {
+    MEASUREMENT_UNIT_RADIO_BUTTONS: "input[name='unit'][type='radio']",
+    ELLIPSE_SEMI_AXIS_UNIT: ".semi-axis-unit",
+};
+
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+}
+
+class Ellipse {
+    constructor(hAxis, vAxis) {
+        this.hAxis = hAxis;
+        this.vAxis = vAxis;
+    }
+}
+
+appState = {
+    rect: new Rectangle(100, 100),
+    measurementUnit: "Pixels",
+    topLeftEllipse: new Ellipse(0, 0),
+    topRightEllipse: new Ellipse(0, 0),
+    bottomRightEllipse: new Ellipse(0, 0),
+    bottomLeftEllipse: new Ellipse(0, 0),
+};
