@@ -29,6 +29,7 @@ fieldset {
     border: var(--spacing-12_5) solid black;
     width: 6.3rem; /* 100.8px */
     height: 2.5rem; /* 40px */
+    padding-left: var(--spacing-100); /* 16px */
 }
 
 /* ellipse corner */
