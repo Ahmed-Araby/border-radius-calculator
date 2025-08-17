@@ -67,7 +67,7 @@ fieldset {
     all: initial;
     font-size: 1.875rem;
     position: absolute;
-    right: 0;
+    right: var(--spacing-50);
     bottom: 0;
 }
 .copy-btn:hover {
