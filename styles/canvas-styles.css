@@ -12,7 +12,8 @@
     width: 100%;
     height: 50%;
     align-self: stretch;
-    background-color: var(--color-turquaz);
+    background-color: var(--color-dark-blue-transparent);
+    border: var(--spacing-50) solid var(--color-black-transparent);
     
     position: relative;
 }
@@ -20,10 +21,8 @@
     width: 50px;
     height: 50px;
 
-    background-color: var(--color-pink-transparent);
+    background-color: var(--color-light-blue-transparent);
     
-    border: var(--spacing-31_25) solid var(--color-pink-opaque);
-
     position: absolute;
 }
 
