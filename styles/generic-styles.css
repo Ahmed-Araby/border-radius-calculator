@@ -4,18 +4,21 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow: auto;
+    scrollbar-gutter: stable;
+}
 body {
-    min-inline-size: 100vi;
+    max-inline-size: 100%;
     min-block-size: 100vb;
 }
 
 
 .split-screen {
-    max-block-size: 100vb;
-    min-inline-size: 100vi;
+    min-block-size: 100vb;
+    max-inline-size: 100%;
     padding: var(--spacing-150);
-    overflow: auto;
-    scrollbar-gutter: stable both-edges;
+    border-bottom: var(--spacing-12_5) solid black;
 }
 
 .h-flex {
@@ -26,4 +29,11 @@ body {
     width: var(--spacing-12_5);
     margin-inline: var(--spacing-150);
     background-color: black;
+}
+
+.footer {
+    height: 6rem; /* 144px */
+    padding: var(--spacing-150) 0;
+    text-align: center;
+    border-top: var(--spacing-12_5) solid black;
 }
