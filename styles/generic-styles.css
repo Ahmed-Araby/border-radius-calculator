@@ -3,17 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    inline-size: 100vi;
-    block-size: 100vb;
+    min-inline-size: 100vi;
+    min-block-size: 100vb;
 }
 
 
-
 .split-screen {
-    min-height: 100vb;
-    width: 100vi;
+    max-block-size: 100vb;
+    min-inline-size: 100vi;
     padding: var(--spacing-150);
+    overflow: auto;
+    scrollbar-gutter: stable both-edges;
 }
 
 .h-flex {
