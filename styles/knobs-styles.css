@@ -5,7 +5,7 @@
     gap: var(--spacing-150);
 }
 
-.knobs > * {
+.knobs > *:not(:last-child) {
     padding-bottom: var(--spacing-50);
     border-bottom: var(--spacing-12_5) solid black;
 }

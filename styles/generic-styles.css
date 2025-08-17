@@ -11,8 +11,8 @@ body {
 
 
 .split-screen {
-    height: 100%;
-    width: 100%;
+    min-height: 100vb;
+    width: 100vi;
     padding: var(--spacing-150);
 }
 
