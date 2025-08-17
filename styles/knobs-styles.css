@@ -51,7 +51,7 @@ fieldset {
     justify-self: end;
     text-align: end;
 
-    width: 7rem; /* 112px, can fit maximum 4 digits along with the unit*/ 
+    min-width: 10rem; /* 160px, can fit up to 5 digits along with the measurement unit */ 
     border: var(--spacing-12_5) solid black;
     padding: var(--spacing-50);
 }
