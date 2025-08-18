@@ -7,6 +7,10 @@ class InputSlider {
         this.cssUnit = cssUnit;
     }
 
+    setValue(value) {
+        this.value = value;
+    }
+    
     setMax(max) {
         this.max = max;
     }

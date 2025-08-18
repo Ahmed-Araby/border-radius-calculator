@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     listenOnMeasurementUnitRadioButtonsSelection();
     listenOnRectDimensionsChange()
     listenOnHSemiAxisInputSliderChange();
+    listenOnVSemiAxisInputSliderChange();
 });
 
 

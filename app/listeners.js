@@ -4,11 +4,13 @@ const hSemiAxisInputSliders = {
     topLeftHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
     topRightHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
     bottomRightHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
+    bottomLeftHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
 }
 const vSemiAxisInputSliders = {
     topLeftVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
     topRightVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
     bottomRightVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
+    bottomLeftVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
 };
 
 function listenOnMeasurementUnitRadioButtonsSelection() {
@@ -49,16 +51,24 @@ function listenOnRectDimensionsChange() {
         console.log("hSemiAxisInputSliders = ", hSemiAxisInputSliders);
         console.log("vSemiAxisInputSliders = ", vSemiAxisInputSliders);
     });
-
-
 }
 
 function listenOnHSemiAxisInputSliderChange() {
-    const semiAxisSliders = document.getElementsByClassName(CSS_SELECTORS.SEMI_AXIS_SLIDER_CLASS_NAME);
+    const semiAxisSliders = document.getElementsByClassName(CSS_SELECTORS.HORIZONTAL_SEMI_AXIS_SLIDER_CLASS_NAME);
     for(slider of semiAxisSliders) {
         slider.addEventListener('input', (event) => {
-            const sliderValueUIElementId = semiAxisSliderInputIdToSemiAxisValueId.get(event.target.id);
-            document.getElementById(sliderValueUIElementId).textContent = event.target.value;
+            const key = HtmlIdToMapKey.hSemiAxisSliderInputIdToHSemiAxisInputSliderKey.get(event.target.id);
+            hSemiAxisInputSliders[key].setValue(event.target.value);
+        });
+    }
+}
+
+function listenOnVSemiAxisInputSliderChange() {
+    const semiAxisSliders = document.getElementsByClassName(CSS_SELECTORS.VERTICAL_SEMI_AXIS_SLIDER_CLASS_NAME);
+    for(slider of semiAxisSliders) {
+        slider.addEventListener('input', (event) => {
+            const key = HtmlIdToMapKey.vSemiAxisSliderInputIdToVSemiAxisInputSliderKey.get(event.target.id);
+            vSemiAxisInputSliders[key].setValue(event.target.value);
         });
     }
 }

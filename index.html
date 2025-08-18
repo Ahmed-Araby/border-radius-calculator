@@ -11,6 +11,8 @@
         <script src="./app/models/Ellipse.js" defer> </script>
         <script src="./app/models/InputSlider.js" defer> </script>
         <script src="./app/Util.js" defer> </script>
+        <script src="./app/HtmlIdToMapKey.js" defer> </script>
+
         <script src="./app/AppContext.js" defer> </script>
         <script src="./app/EllipseSemiAxis.js" defer> </script>
         <script src="./app/Rect.js" defer> </script>
@@ -73,7 +75,7 @@
                         <div class="ellipse-semi-axes">
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-left-ellipse-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
-                                <input type="range" min="0" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-left-ellipse-horizontal-sami-axis-slider">
+                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-left-ellipse-horizontal-sami-axis-slider">
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="top-left-ellipse-horizontal-sami-axis-value">0</span> 
@@ -82,7 +84,7 @@
 
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-left-ellipse-vertical-sami-axis-slider">Vertical Semi Axis</label>
-                                <input type="range" min="0" step="1" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="top-left-ellipse-vertical-sami-axis-slider">     
+                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="top-left-ellipse-vertical-sami-axis-slider">     
                             </div>
                             <div class="semi-axis-measurement text-preset-4" >
                                 <span id="top-left-ellipse-vertical-sami-axis-value">0</span>
