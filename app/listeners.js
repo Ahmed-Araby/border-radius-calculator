@@ -13,8 +13,14 @@ function listenOnRectDimensionsChange() {
         event.preventDefault();
 
         const formData = new FormData(event.target);
-        setRectDimensions(formData.get("width"), formData.get("height"));
-        setSemiAxisSliderInputMaxValue(formData.get("width"), formData.get("height"));
+        const width = formData.get("width");
+        const height = formData.get("height");
+        
+        setRectDimensions(width, height);
+
+        EllipseSemiAxis.setHAxisMax(width / 2);
+        EllipseSemiAxis.setVAxisMax(height / 2);
+        EllipseSemiAxis.dispatchInputEvents();
     });
 }
 

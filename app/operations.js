@@ -4,18 +4,6 @@ function setRectDimensions(width, height) {
     rectHtmlElem.style.height = height + "px";
 }
 
-function setSemiAxisSliderInputMaxValue(rectWidth, rectHeight) {
-    const hSliders = document.getElementsByClassName(CSS_SELECTORS.HORIZONTAL_SEMI_AXIS_SLIDER_CLASS_NAME);
-    for (slider of hSliders) {
-        slider.max = rectWidth / 2;
-    }
-
-    const vSlider = document.getElementsByClassName(CSS_SELECTORS.VERTICAL_SEMI_AXIS_SLIDER_CLASS_NAME);
-    for (slider of vSlider) {
-        slider.max = rectHeight / 2;
-    }
-}
-
 
 function handleMeasurementUnitSelection(event) {
     const measurementUnit = event.target.value;
