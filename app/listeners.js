@@ -13,7 +13,7 @@ const vSemiAxisInputSliders = {
     bottomLeftVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
 };
 
-function listenOnMeasurementUnitRadioButtonsSelection() {
+function listenOnMeasurementUnitChange() {
     document.querySelectorAll(CSS_SELECTORS.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
         radioButton.addEventListener('change', (event) => {
             console.log("MEasurement Unit Radio Button Selection event = ", event)

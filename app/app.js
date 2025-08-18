@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("register event listeners");
     listenOnMeasurementUnitRadioButtonsSelection();
+    listenOnMeasurementUnitChange();
     listenOnRectDimensionsChange()
     listenOnHSemiAxisInputSliderChange();
     listenOnVSemiAxisInputSliderChange();
