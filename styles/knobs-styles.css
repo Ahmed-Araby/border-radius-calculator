@@ -16,7 +16,7 @@ fieldset {
     padding: var(--spacing-50);
 }
 
-.measurement-units-container, .rect-dimensions {
+.measurement-units-container, .rect-dimensions-form {
     display: flex;
     justify-content: space-evenly;
     gap: var(--spacing-50);
@@ -30,6 +30,20 @@ fieldset {
     width: 6.3rem; /* 100.8px */
     height: 2.5rem; /* 40px */
     padding-left: var(--spacing-100); /* 16px */
+}
+.apply-btn {
+    color: white;
+    background-color: black;
+    border: var(--spacing-12_5) solid gray;
+    padding: var(--spacing-50);
+}
+.apply-btn:hover {
+    cursor: pointer;
+}
+.apply-btn:active {
+    color: black;
+    background-color: white;
+    border: var(--spacing-12_5) solid black;
 }
 
 /* ellipse corner */

@@ -39,16 +39,22 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="rect-dimensions">
+                        <fieldset>
                             <legend class="text-preset-3">Rectangle Dimensions</legend>
-                            <div>
-                                <input class="text-preset-4" type="number" id="rect-width-input" placeholder="400" required>
-                                <label class="text-preset-4" for="rect-width-input">Pixel</label>
-                            </div>
-                            <div>
-                                <input class="text-preset-4" type="number" id="rect-height-input" placeholder="500" required>
-                                <label class="text-preset-4" for="rect-height-input">Pixel</label>
-                            </div>
+                            <form class="rect-dimensions-form">
+                                <!--  [TODO] remove divs and nest the input within the label element, for them to act as a unit -->
+                                <!--  [TODO] add validation to the input values -->
+                                <!--  [TODO] why the font properties weren't inherited -->
+                                <div>
+                                    <input name="width" class="text-preset-4" type="number" id="rect-width-input" placeholder="400" required>
+                                    <label class="text-preset-4" for="rect-width-input">Pixel</label>
+                                </div>
+                                <div>
+                                    <input name="height" class="text-preset-4" type="number" id="rect-height-input" placeholder="500" required>
+                                    <label class="text-preset-4" for="rect-height-input">Pixel</label>
+                                </div>
+                                <button type="submit" class="apply-btn text-preset-4">Apply</button>
+                            </form>
                         </fieldset>
                     </section>
                     
@@ -151,7 +157,7 @@
                 <div class="v-line"> </div>
 
                 <div class="canvas">
-                    <div class="rect">
+                    <div class="rect" id="rect">
                         <div class="ellipse top-left"></div>
                         <div class="ellipse top-right"></div>
                         <div class="ellipse bottom-right"></div>
