@@ -1,6 +1,5 @@
 class AppContext {
     static context = {
-        rect: new Rectangle(600, 600), // dimensions always in pixels
         semiAxisMeasurementCssUnit: "px",
         ellipseInputSlider: new InputSlider(0, 300, 1),
         topLeftEllipse: new Ellipse(0, 0),

@@ -3,4 +3,10 @@ class Rectangle {
         this.width = width;
         this.height = height;
     }
+
+
+    setDimensions(width, height) {
+        this.width = width;
+        this.height = height;
+    }
 }
