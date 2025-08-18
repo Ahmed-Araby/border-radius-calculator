@@ -1,18 +1,3 @@
-const rect = new Rectangle(600, 600);
-
-const hSemiAxisInputSliders = {
-    topLeftHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-    topRightHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-    bottomRightHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-    bottomLeftHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-}
-const vSemiAxisInputSliders = {
-    topLeftVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-    topRightVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-    bottomRightVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-    bottomLeftVSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
-};
-
 function listenOnMeasurementUnitChange() {
     document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
         radioButton.addEventListener('change', (event) => {
