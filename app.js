@@ -7,9 +7,22 @@ const CSS_SELECTORS = {
     RECT_DIMENSION_WIDTH: "#rect-width-input",
     RECT_DIMENSIONS_FORM: ".rect-dimensions-form",
     RECT: "#rect",
+    SEMI_AXIS_SLIDER_CLASS_NAME: "semi-axis-slider",
     HORIZONTAL_SEMI_AXIS_SLIDER_CLASS_NAME: "h-semi-axis-slider",
     VERTICAL_SEMI_AXIS_SLIDER_CLASS_NAME: "v-semi-axis-slider"
 };
+
+const semiAxisSliderInputIdToSemiAxisValueId = new Map([
+    ["top-left-ellipse-horizontal-sami-axis-slider", "top-left-ellipse-horizontal-sami-axis-value"],
+    ["top-left-ellipse-vertical-sami-axis-slider", "top-left-ellipse-vertical-sami-axis-value"],
+    ["top-right-ellipse-horizontal-sami-axis-slider", "top-right-ellipse-horizontal-sami-axis-value"],
+    ["top-right-ellipse-vertical-sami-axis-slider", "top-right-ellipse-vertical-sami-axis-value"],
+    ["bottom-left-ellipse-horizontal-sami-axis-slider", "bottom-left-ellipse-horizontal-sami-axis-value"],
+    ["bottom-left-ellipse-vertical-sami-axis-slider", "bottom-left-ellipse-vertical-sami-axis-value"],
+    ["bottom-right-ellipse-horizontal-sami-axis-slider", "bottom-right-ellipse-horizontal-sami-axis-value"],
+    ["bottom-right-ellipse-vertical-sami-axis-slider", "bottom-right-ellipse-vertical-sami-axis-value"]
+]);
+
 
 class Rectangle {
     constructor(width, height) {
@@ -39,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("register event listeners");
     listenOnMeasurementUnitRadioButtonsSelection();
     listenOnRectDimensionsChange()
+    listenOnHSemiAxisInputSliderChange();
 });
 
 
@@ -60,6 +74,16 @@ function listenOnRectDimensionsChange() {
         setRectDimensions(formData.get("width"), formData.get("height"));
         setSemiAxisSliderInputMaxValue(formData.get("width"), formData.get("height"));
     });
+}
+
+function listenOnHSemiAxisInputSliderChange() {
+    const semiAxisSliders = document.getElementsByClassName(CSS_SELECTORS.SEMI_AXIS_SLIDER_CLASS_NAME);
+    for(slider of semiAxisSliders) {
+        slider.addEventListener('input', (event) => {
+            const sliderValueUIElementId = semiAxisSliderInputIdToSemiAxisValueId.get(event.target.id);
+            document.getElementById(sliderValueUIElementId).textContent = event.target.value;
+        });
+    }
 }
 
 function setRectDimensions(width, height) {
