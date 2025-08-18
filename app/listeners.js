@@ -16,7 +16,7 @@ function listenOnRectDimensionsChange() {
         const width = formData.get("width");
         const height = formData.get("height");
         
-        setRectDimensions(width, height);
+        Rect.setDimensions(width, height);
 
         EllipseSemiAxis.setHAxisMax(width / 2);
         EllipseSemiAxis.setVAxisMax(height / 2);

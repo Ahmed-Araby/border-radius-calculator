@@ -23,30 +23,6 @@ const semiAxisSliderInputIdToSemiAxisValueId = new Map([
     ["bottom-right-ellipse-vertical-sami-axis-slider", "bottom-right-ellipse-vertical-sami-axis-value"]
 ]);
 
-
-class Rectangle {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
-}
-
-class Ellipse {
-    constructor(hAxis, vAxis) {
-        this.hAxis = hAxis;
-        this.vAxis = vAxis;
-    }
-}
-
-appState = {
-    rect: new Rectangle(100, 100),
-    measurementUnit: "px",
-    topLeftEllipse: new Ellipse(0, 0),
-    topRightEllipse: new Ellipse(0, 0),
-    bottomRightEllipse: new Ellipse(0, 0),
-    bottomLeftEllipse: new Ellipse(0, 0),
-};
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("register event listeners");

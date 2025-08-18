@@ -20,4 +20,11 @@ class EllipseSemiAxis {
             slider.dispatchEvent(new Event('input'));
         }
     }
+
+    static setMeasurementUnits(measurementUnit) {
+        const measurementUIValue = Util.cssUnitToPresentationalUnnit(measurementUnit);
+        document.querySelectorAll(CSS_SELECTORS.ELLIPSE_SEMI_AXIS_UNIT).forEach((ellipseUnitElement) => {
+            ellipseUnitElement.textContent = measurementUIValue;
+        });
+    }
 }
