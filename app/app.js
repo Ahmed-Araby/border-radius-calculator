@@ -1,17 +1,5 @@
 console.log("init Border Radius Calculator App");
 
-
-const CSS_SELECTORS = {
-    MEASUREMENT_UNIT_RADIO_BUTTONS: "input[name='unit'][type='radio']",
-    ELLIPSE_SEMI_AXIS_UNIT: ".semi-axis-unit",
-    RECT_DIMENSION_WIDTH: "#rect-width-input",
-    RECT_DIMENSIONS_FORM: ".rect-dimensions-form",
-    RECT: "#rect",
-    SEMI_AXIS_SLIDER_CLASS_NAME: "semi-axis-slider",
-    HORIZONTAL_SEMI_AXIS_SLIDER_CLASS_NAME: "h-semi-axis-slider",
-    VERTICAL_SEMI_AXIS_SLIDER_CLASS_NAME: "v-semi-axis-slider"
-};
-
 const semiAxisSliderInputIdToSemiAxisValueId = new Map([
     ["top-left-ellipse-horizontal-sami-axis-slider", "top-left-ellipse-horizontal-sami-axis-value"],
     ["top-left-ellipse-vertical-sami-axis-slider", "top-left-ellipse-vertical-sami-axis-value"],
@@ -26,7 +14,6 @@ const semiAxisSliderInputIdToSemiAxisValueId = new Map([
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("register event listeners");
-    listenOnMeasurementUnitRadioButtonsSelection();
     listenOnMeasurementUnitChange();
     listenOnRectDimensionsChange()
     listenOnHSemiAxisInputSliderChange();

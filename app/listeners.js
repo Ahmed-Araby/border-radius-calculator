@@ -14,7 +14,7 @@ const vSemiAxisInputSliders = {
 };
 
 function listenOnMeasurementUnitChange() {
-    document.querySelectorAll(CSS_SELECTORS.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
+    document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
         radioButton.addEventListener('change', (event) => {
             console.log("MEasurement Unit Radio Button Selection event = ", event)
             handleMeasurementUnitSelection(event);
@@ -23,7 +23,7 @@ function listenOnMeasurementUnitChange() {
 }
 
 function listenOnRectDimensionsChange() {
-    document.querySelector(CSS_SELECTORS.RECT_DIMENSIONS_FORM).addEventListener('submit', (event) => {
+    document.getElementsByClassName(CSSSelectors.classes.RECT_DIMENSIONS_FORM)[0].addEventListener('submit', (event) => {
         console.log("Rectangle Dimensions Fomr Submitation event = ", event);
         event.preventDefault();
 
@@ -54,7 +54,7 @@ function listenOnRectDimensionsChange() {
 }
 
 function listenOnHSemiAxisInputSliderChange() {
-    const semiAxisSliders = document.getElementsByClassName(CSS_SELECTORS.HORIZONTAL_SEMI_AXIS_SLIDER_CLASS_NAME);
+    const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
     for(slider of semiAxisSliders) {
         slider.addEventListener('input', (event) => {
             const key = HtmlIdToMapKey.hSemiAxisSliderInputIdToHSemiAxisInputSliderKey.get(event.target.id);
@@ -64,7 +64,7 @@ function listenOnHSemiAxisInputSliderChange() {
 }
 
 function listenOnVSemiAxisInputSliderChange() {
-    const semiAxisSliders = document.getElementsByClassName(CSS_SELECTORS.VERTICAL_SEMI_AXIS_SLIDER_CLASS_NAME);
+    const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
     for(slider of semiAxisSliders) {
         slider.addEventListener('input', (event) => {
             const key = HtmlIdToMapKey.vSemiAxisSliderInputIdToVSemiAxisInputSliderKey.get(event.target.id);
