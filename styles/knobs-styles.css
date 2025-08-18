@@ -62,7 +62,7 @@ fieldset {
 .semi-axis-slider {
     accent-color: black;
 }
-.semi-axis-value {
+.semi-axis-measurement {
     justify-self: end;
     text-align: end;
 
