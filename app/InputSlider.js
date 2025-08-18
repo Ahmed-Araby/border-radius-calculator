@@ -10,9 +10,17 @@ class InputSlider {
     setValue(value) {
         this.value = value;
     }
+
+    getValue() {
+        return this.value;
+    }
     
     setMax(max) {
         this.max = max;
+    }
+
+    getMax() {
+        return this.max;
     }
 
     clampValue() {

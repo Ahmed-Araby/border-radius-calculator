@@ -1,8 +1,12 @@
+
 function listenOnMeasurementUnitChange() {
     document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
+
         radioButton.addEventListener('change', (event) => {
-            console.log("Measurement Unit Change event = ", event.target.value);
-            
+            newMeasurementUnit = event.target.value;
+            adaptHAxisInputSlidersToNewUnit(newMeasurementUnit);
+            adaptvAxisInputSlidersToNewUnit(newMeasurementUnit);
+            measurementUnit = newMeasurementUnit;
         });
     });
 }
@@ -18,15 +22,13 @@ function listenOnRectDimensionsChange() {
 
         rect.setDimensions(widthPX, heightPX);
 
-        // [TODO] change the selected unit to the one selected in the radio buttons
-        const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, "px");
+        const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, measurementUnit);
         Object.entries(hSemiAxisInputSliders).forEach(([key, inputSlider]) => {
             inputSlider.setMax(widthInSelectedUnit / 2);
             inputSlider.clampValue();
         });
 
-        // [TODO] change the selected unit to the one selected in the radio buttons
-        const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, "px");
+        const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, measurementUnit);
         Object.entries(vSemiAxisInputSliders).forEach(([key, inputSlider]) => {
             inputSlider.setMax(heightInSelectedUnit / 2);
             inputSlider.clampValue();

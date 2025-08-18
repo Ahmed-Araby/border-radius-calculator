@@ -33,4 +33,22 @@ class Util {
                 throw new Error(`Unknown measurement unit: ${selectedUnit}`);
         }
     }
+
+    static toPX(currValue, currMeasurementUnit, dimensionLengthPX) {
+        switch (currMeasurementUnit) {
+            case "px":
+                return currValue;
+            case "rem":
+                return currValue * 16; // Assuming 1rem = 16px
+            case "percentage":
+                return dimensionLengthPX / 100 * currValue;
+            default:
+                throw new Error(`Unknown measurement unit: ${currMeasurementUnit}`);
+        }
+    }
+
+    static toSelectedUnit(currValue, DimensionLengthPX, currCssUnit, newCssUnit) {
+        const currValuePX = Util.toPX(currValue, currCssUnit, DimensionLengthPX);
+        return Util.pxToSelectedUnit(currValuePX, DimensionLengthPX, newCssUnit);
+    }
 }

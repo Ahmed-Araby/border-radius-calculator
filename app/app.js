@@ -1,7 +1,7 @@
 console.log("init Border Radius Calculator App");
 
 const rect = new Rectangle(600, 600);
-
+let measurementUnit = "px";
 const hSemiAxisInputSliders = {
     topLeftHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
     topRightHSemiAxisInputSlider: new InputSlider(0, 300, 1, 0, "px"),
