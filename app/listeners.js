@@ -1,10 +1,6 @@
 import { CSSSelectors } from "./CSSSelectors.js";
-import { HtmlIdToMapKey } from "./HtmlIdToMapKey.js";
-import { Util } from "./Util.js";
 import { Operations } from "./operations.js";
 import { AppContext } from "./AppContext.js";
-import { ValueSpan } from "./ValueSpan.js";
-import { CssDeclarationSnippet } from "./CssDeclarationSnippet.js";
 
 export class Listeners {
 
@@ -30,28 +26,6 @@ export class Listeners {
             const heightPX = formData.get("height");
             Operations.handleRectDimensionsChange(widthPX, heightPX);
         });
-    }
-    
-    // [TODO] delete this method
-    static listenOnHSemiAxisInputSliderChange() {
-        const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
-        for(const slider of semiAxisSliders) {
-            slider.addEventListener('input', (event) => {
-                const key = HtmlIdToMapKey.hSemiAxisSliderInputIdToHSemiAxisInputSliderKey.get( /** @type {HTMLInputElement} */(event.target).id);
-                AppContext.hSemiAxisInputSliders[key].setValue(  /** @type {HTMLInputElement} */(event.target).value);
-            });
-        }
-    }
-    
-    // [TODO] delete this method
-    static listenOnVSemiAxisInputSliderChange() {
-        const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
-        for(const slider of semiAxisSliders) {
-            slider.addEventListener('input', (event) => {
-                const key = HtmlIdToMapKey.vSemiAxisSliderInputIdToVSemiAxisInputSliderKey.get( /** @type {HTMLInputElement} */(event.target).id);
-                AppContext.vSemiAxisInputSliders[key].setValue( /** @type {HTMLInputElement} */(event.target).value);
-            });
-        }
     }
 
     static listenOnSemiAxisSliderInput() {
