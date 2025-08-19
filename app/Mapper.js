@@ -1,4 +1,12 @@
 export class Mapper {
+
+    /**
+     * [Note]: The order of the Ids in the arrays is important.
+     *  - all the mapping and retrival logic made by method in this class depends on this order
+     *  - client code as well depends on this order.
+     * 
+     * // [TODO]: refactor this class such that changing the order of the Ids in the arrays doesn't break the logic.
+     */
     static axisSliderIds = [
         "top-left-ellipse-horizontal-sami-axis-slider",     
         "top-left-ellipse-vertical-sami-axis-slider",  
@@ -58,5 +66,23 @@ export class Mapper {
 
     static getAxisSliderIndex(sliderId) {
         return Mapper.axisSliderIds.indexOf(sliderId);
+    }
+
+    static getHSemiAxisSliderIds() {
+        return [
+            Mapper.axisSliderIds[0], // top-left-horizontal
+            Mapper.axisSliderIds[2], // top-right-horizontal
+            Mapper.axisSliderIds[4], // bottom-right-horizontal
+            Mapper.axisSliderIds[6]  // bottom-left-horizontal
+        ];
+    }
+
+    static getVSemiAxisSliderIds() {
+        return [
+            Mapper.axisSliderIds[1], // top-left-vertical
+            Mapper.axisSliderIds[3], // top-right-vertical
+            Mapper.axisSliderIds[5], // bottom-right-vertical
+            Mapper.axisSliderIds[7]  // bottom-left-vertical
+        ];
     }
 }

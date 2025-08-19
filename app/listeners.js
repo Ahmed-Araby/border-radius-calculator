@@ -77,6 +77,7 @@ export class Listeners {
                 const value = /** @type {HTMLInputElement} */(event.target).value;
                 ValueSpan.setValueSpan(sliderId, value);
                 CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, value);
+                CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
             })
         }
     }
