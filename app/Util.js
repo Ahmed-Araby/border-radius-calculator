@@ -1,4 +1,4 @@
-class Util {
+export class Util {
 
     static cssUnitToPresentationalUnnit(cssUnit) {
         switch (cssUnit) {

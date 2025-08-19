@@ -1,4 +1,4 @@
-class InputSlider {
+export class InputSlider {
     constructor(min, max, step, value, cssUnit) {
         this.min = min;
         this.max = max;

@@ -1,3 +1,6 @@
+import { CSSSelectors } from "./CSSSelectors";
+import { HtmlIdToMapKey } from "./HtmlIdToMapKey";
+import { Util } from "./Util";
 
 function listenOnMeasurementUnitChange() {
     document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {

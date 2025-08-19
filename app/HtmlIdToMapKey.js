@@ -1,4 +1,4 @@
-class HtmlIdToMapKey {
+export class HtmlIdToMapKey {
     static hSemiAxisSliderInputIdToHSemiAxisInputSliderKey = new Map([
         ["top-left-ellipse-horizontal-sami-axis-slider", "topLeftHSemiAxisInputSlider"],
         ["top-right-ellipse-horizontal-sami-axis-slider", "topRightHSemiAxisInputSlider"],
