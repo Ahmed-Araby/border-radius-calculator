@@ -1,3 +1,5 @@
+import { AppContext } from "app";
+
 export class Util {
 
     static cssUnitToPresentationalUnnit(cssUnit) {
@@ -9,7 +11,7 @@ export class Util {
             case "percentage":
                 return "Percentage";
             default:
-                throw new Error(`Unknown measurement unit: ${measurementUnit}`);
+                throw new Error(`Unknown measurement unit: ${AppContext.measurementUnit}`);
         }
     }
 

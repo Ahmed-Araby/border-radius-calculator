@@ -1,64 +1,70 @@
 import { CSSSelectors } from "./CSSSelectors";
 import { HtmlIdToMapKey } from "./HtmlIdToMapKey";
 import { Util } from "./Util";
+import { Operations } from "operations";
+import { AppContext } from "app";
 
-function listenOnMeasurementUnitChange() {
-    document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
+export class listeners {
 
-        radioButton.addEventListener('change', (event) => {
-            newMeasurementUnit = event.target.value;
-            adaptHAxisInputSlidersToNewUnit(newMeasurementUnit);
-            adaptvAxisInputSlidersToNewUnit(newMeasurementUnit);
-            measurementUnit = newMeasurementUnit;
+    static listenOnMeasurementUnitChange() {
+        document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
+    
+            radioButton.addEventListener('change', (event) => {
+                const newMeasurementUnit = /** @type {HTMLInputElement} */(event.target).value;
+                Operations.adaptHAxisInputSlidersToNewUnit(newMeasurementUnit);
+                Operations.adaptvAxisInputSlidersToNewUnit(newMeasurementUnit);
+                AppContext.measurementUnit = newMeasurementUnit;
+            });
         });
-    });
-}
-
-function listenOnRectDimensionsChange() {
-    document.getElementsByClassName(CSSSelectors.classes.RECT_DIMENSIONS_FORM)[0].addEventListener('submit', (event) => {
-        console.log("Rectangle Dimensions Fomr Submitation event = ", event);
-        event.preventDefault();
-
-        const formData = new FormData(event.target);
-        const widthPX = formData.get("width");
-        const heightPX = formData.get("height");
-
-        rect.setDimensions(widthPX, heightPX);
-
-        const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, measurementUnit);
-        Object.entries(hSemiAxisInputSliders).forEach(([key, inputSlider]) => {
-            inputSlider.setMax(widthInSelectedUnit / 2);
-            inputSlider.clampValue();
+    }
+    
+    static listenOnRectDimensionsChange() {
+        document.getElementsByClassName(CSSSelectors.classes.RECT_DIMENSIONS_FORM)[0].addEventListener('submit', (event) => {
+            console.log("Rectangle Dimensions Fomr Submitation event = ", event);
+            event.preventDefault();
+    
+            const formData = new FormData(/** @type {HTMLFormElement} */ (event.target));
+            const widthPX = formData.get("width");
+            const heightPX = formData.get("height");
+    
+            AppContext.rect.setDimensions(widthPX, heightPX);
+    
+            const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
+            Object.entries(AppContext.hSemiAxisInputSliders).forEach(([key, inputSlider]) => {
+                inputSlider.setMax(widthInSelectedUnit / 2);
+                inputSlider.clampValue();
+            });
+    
+            const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
+            Object.entries(AppContext.vSemiAxisInputSliders).forEach(([key, inputSlider]) => {
+                inputSlider.setMax(heightInSelectedUnit / 2);
+                inputSlider.clampValue();
+            });
+    
+            console.log("rect = ", AppContext.rect);
+            console.log("hSemiAxisInputSliders = ", AppContext.hSemiAxisInputSliders);
+            console.log("vSemiAxisInputSliders = ", AppContext.vSemiAxisInputSliders);
         });
-
-        const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, measurementUnit);
-        Object.entries(vSemiAxisInputSliders).forEach(([key, inputSlider]) => {
-            inputSlider.setMax(heightInSelectedUnit / 2);
-            inputSlider.clampValue();
-        });
-
-        console.log("rect = ", rect);
-        console.log("hSemiAxisInputSliders = ", hSemiAxisInputSliders);
-        console.log("vSemiAxisInputSliders = ", vSemiAxisInputSliders);
-    });
-}
-
-function listenOnHSemiAxisInputSliderChange() {
-    const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
-    for(slider of semiAxisSliders) {
-        slider.addEventListener('input', (event) => {
-            const key = HtmlIdToMapKey.hSemiAxisSliderInputIdToHSemiAxisInputSliderKey.get(event.target.id);
-            hSemiAxisInputSliders[key].setValue(event.target.value);
-        });
+    }
+    
+    static listenOnHSemiAxisInputSliderChange() {
+        const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
+        for(const slider of semiAxisSliders) {
+            slider.addEventListener('input', (event) => {
+                const key = HtmlIdToMapKey.hSemiAxisSliderInputIdToHSemiAxisInputSliderKey.get( /** @type {HTMLInputElement} */(event.target).id);
+                AppContext.hSemiAxisInputSliders[key].setValue(  /** @type {HTMLInputElement} */(event.target).value);
+            });
+        }
+    }
+    
+    static listenOnVSemiAxisInputSliderChange() {
+        const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
+        for(const slider of semiAxisSliders) {
+            slider.addEventListener('input', (event) => {
+                const key = HtmlIdToMapKey.vSemiAxisSliderInputIdToVSemiAxisInputSliderKey.get( /** @type {HTMLInputElement} */(event.target).id);
+                AppContext.vSemiAxisInputSliders[key].setValue( /** @type {HTMLInputElement} */(event.target).value);
+            });
+        }
     }
 }
 
-function listenOnVSemiAxisInputSliderChange() {
-    const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
-    for(slider of semiAxisSliders) {
-        slider.addEventListener('input', (event) => {
-            const key = HtmlIdToMapKey.vSemiAxisSliderInputIdToVSemiAxisInputSliderKey.get(event.target.id);
-            vSemiAxisInputSliders[key].setValue(event.target.value);
-        });
-    }
-}
