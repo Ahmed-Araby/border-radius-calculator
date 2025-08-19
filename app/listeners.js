@@ -60,9 +60,7 @@ export class Listeners {
             slider.addEventListener("input", (event)=> {
                 const sliderId = /** @type {HTMLInputElement} */(event.target).id;
                 const value = /** @type {HTMLInputElement} */(event.target).value;
-                ValueSpan.setValueSpan(sliderId, value);
-                CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, value);
-                CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
+                Operations.handleSemiAxisSliderChange(sliderId, value);
             })
         }
     }
