@@ -49,6 +49,7 @@ export class Listeners {
         });
     }
     
+    // [TODO] delete this method
     static listenOnHSemiAxisInputSliderChange() {
         const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
         for(const slider of semiAxisSliders) {
@@ -59,6 +60,7 @@ export class Listeners {
         }
     }
     
+    // [TODO] delete this method
     static listenOnVSemiAxisInputSliderChange() {
         const semiAxisSliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
         for(const slider of semiAxisSliders) {

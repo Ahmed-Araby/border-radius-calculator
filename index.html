@@ -56,6 +56,7 @@
                                 <!--  [TODO] remove divs and nest the input within the label element, for them to act as a unit -->
                                 <!--  [TODO] add validation to the input values -->
                                 <!--  [TODO] why the font properties weren't inherited -->
+                                <!-- [TODO] add labels for the input fields -->
                                 <div>
                                     <input name="width" class="text-preset-4" type="number" id="rect-width-input" placeholder="400" required>
                                     <label class="text-preset-4" for="rect-width-input">Pixel</label>
@@ -72,6 +73,7 @@
                     <section class="top-left-ellipse-knobs">
                         <h2 class="title text-preset-2">Top Left Ellipse</h2>
                         <div class="ellipse-semi-axes">
+                            <!-- simplify the html structure and layout for the content of the ellipse-semi-axes  section -->
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-left-ellipse-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
                                 <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-left-ellipse-horizontal-sami-axis-slider">
@@ -178,6 +180,7 @@
                         </code>
                     </section>
 
+                    <!-- [TODO] adapt the style of this element when the value is long enough to trigger wrapping -->
                     <code class="css-declaration text-preset-4" >
                         border-radius:
                         <span id="css-border-radius-declaration">0</span>;
