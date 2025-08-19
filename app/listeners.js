@@ -1,10 +1,10 @@
-import { CSSSelectors } from "./CSSSelectors";
-import { HtmlIdToMapKey } from "./HtmlIdToMapKey";
-import { Util } from "./Util";
-import { Operations } from "operations";
-import { AppContext } from "app";
+import { CSSSelectors } from "./CSSSelectors.js";
+import { HtmlIdToMapKey } from "./HtmlIdToMapKey.js";
+import { Util } from "./Util.js";
+import { Operations } from "./operations.js";
+import { AppContext } from "./AppContext.js";
 
-export class listeners {
+export class Listeners {
 
     static listenOnMeasurementUnitChange() {
         document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {

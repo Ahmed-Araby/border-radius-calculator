@@ -1,5 +1,5 @@
-import { AppContext } from "app";
-import { Util } from "app/Util.js";
+import { AppContext } from "./AppContext.js";
+import { Util } from "./Util.js";
 
 export class Operations {
     static adaptHAxisInputSlidersToNewUnit(newMeasurementUnit) {
