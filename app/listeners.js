@@ -4,6 +4,7 @@ import { Util } from "./Util.js";
 import { Operations } from "./operations.js";
 import { AppContext } from "./AppContext.js";
 import { ValueSpan } from "./ValueSpan.js";
+import { CssDeclarationSnippet } from "./CssDeclarationSnippet.js";
 
 export class Listeners {
 
@@ -75,6 +76,7 @@ export class Listeners {
                 const sliderId = /** @type {HTMLInputElement} */(event.target).id;
                 const value = /** @type {HTMLInputElement} */(event.target).value;
                 ValueSpan.setValueSpan(sliderId, value);
+                CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, value);
             })
         }
     }

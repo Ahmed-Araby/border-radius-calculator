@@ -1,3 +1,4 @@
+import { Mapper } from "./Mapper.js";
 import { AppContext } from "./AppContext.js";
 
 export class Util {
@@ -52,5 +53,9 @@ export class Util {
     static toSelectedUnit(currValue, DimensionLengthPX, currCssUnit, newCssUnit) {
         const currValuePX = Util.toPX(currValue, currCssUnit, DimensionLengthPX);
         return Util.pxToSelectedUnit(currValuePX, DimensionLengthPX, newCssUnit);
+    }
+
+    static isHAxisSlider(sliderId){
+        return Mapper.getAxisSliderIndex(sliderId) % 2 == 0;
     }
 }
