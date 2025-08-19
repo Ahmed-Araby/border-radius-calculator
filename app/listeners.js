@@ -3,6 +3,7 @@ import { HtmlIdToMapKey } from "./HtmlIdToMapKey.js";
 import { Util } from "./Util.js";
 import { Operations } from "./operations.js";
 import { AppContext } from "./AppContext.js";
+import { ValueSpan } from "./ValueSpan.js";
 
 export class Listeners {
 
@@ -64,6 +65,17 @@ export class Listeners {
                 const key = HtmlIdToMapKey.vSemiAxisSliderInputIdToVSemiAxisInputSliderKey.get( /** @type {HTMLInputElement} */(event.target).id);
                 AppContext.vSemiAxisInputSliders[key].setValue( /** @type {HTMLInputElement} */(event.target).value);
             });
+        }
+    }
+
+    static listenOnSemiAxisSliderInput() {
+        const sliders = document.getElementsByClassName(CSSSelectors.classes.SEMI_AXIS_SLIDER);
+        for(const slider of sliders) {
+            slider.addEventListener("input", (event)=> {
+                const sliderId = /** @type {HTMLInputElement} */(event.target).id;
+                const value = /** @type {HTMLInputElement} */(event.target).value;
+                ValueSpan.setValueSpan(sliderId, value);
+            })
         }
     }
 }

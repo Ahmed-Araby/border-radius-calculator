@@ -8,5 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Listeners.listenOnRectDimensionsChange()
     Listeners.listenOnHSemiAxisInputSliderChange();
     Listeners.listenOnVSemiAxisInputSliderChange();
+    Listeners.listenOnSemiAxisSliderInput();
 });
 
