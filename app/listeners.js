@@ -9,8 +9,6 @@ export class Listeners {
     
             radioButton.addEventListener('change', (event) => {
                 const newMeasurementUnit = /** @type {HTMLInputElement} */(event.target).value;
-                Operations.adaptHAxisInputSlidersToNewUnit(newMeasurementUnit);
-                Operations.adaptvAxisInputSlidersToNewUnit(newMeasurementUnit);
                 AppContext.measurementUnit = newMeasurementUnit;
             });
         });

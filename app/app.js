@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("register event listeners");
     Listeners.listenOnMeasurementUnitChange();
     Listeners.listenOnRectDimensionsChange()
-    Listeners.listenOnHSemiAxisInputSliderChange();
-    Listeners.listenOnVSemiAxisInputSliderChange();
     Listeners.listenOnSemiAxisSliderInput();
 });
 
