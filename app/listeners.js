@@ -28,24 +28,7 @@ export class Listeners {
             const formData = new FormData(/** @type {HTMLFormElement} */ (event.target));
             const widthPX = formData.get("width");
             const heightPX = formData.get("height");
-    
-            AppContext.rect.setDimensions(widthPX, heightPX);
-    
-            const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
-            Object.entries(AppContext.hSemiAxisInputSliders).forEach(([key, inputSlider]) => {
-                inputSlider.setMax(widthInSelectedUnit / 2);
-                inputSlider.clampValue();
-            });
-    
-            const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
-            Object.entries(AppContext.vSemiAxisInputSliders).forEach(([key, inputSlider]) => {
-                inputSlider.setMax(heightInSelectedUnit / 2);
-                inputSlider.clampValue();
-            });
-    
-            console.log("rect = ", AppContext.rect);
-            console.log("hSemiAxisInputSliders = ", AppContext.hSemiAxisInputSliders);
-            console.log("vSemiAxisInputSliders = ", AppContext.vSemiAxisInputSliders);
+            Operations.handleRectDimensionsChange(widthPX, heightPX);
         });
     }
     
