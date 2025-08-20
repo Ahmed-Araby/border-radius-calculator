@@ -8,9 +8,10 @@
 }
 
 .rect {
-    align-self: stretch;
     width: 600px;
     height: 600px;
+
+    align-self: center;
     background-color: var(--color-dark-blue-transparent);
     border: var(--spacing-50) solid var(--color-black-transparent);
     
