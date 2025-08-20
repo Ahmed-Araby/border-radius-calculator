@@ -5,9 +5,6 @@ import { CssDeclarationSnippet } from "./CssDeclarationSnippet.js";
 import { CSSSelectors } from "./CSSSelectors.js";
 
 export class Operations {
-    }
-    }
-    
     
     static handleSemiAxisSliderChange(sliderId, newValue) {
         ValueSpan.setValueSpan(sliderId, newValue);
@@ -17,6 +14,7 @@ export class Operations {
 
     static handleRectDimensionsChange(widthPX, heightPX) {
         console.log("handleRectDimensionsChange called with widthPX = ", widthPX, " and heightPX = ", heightPX);
+        AppContext.rect.setDimensions(widthPX, heightPX);
         const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
         const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
 

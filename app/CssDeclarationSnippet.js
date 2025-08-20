@@ -58,7 +58,7 @@ export class CssDeclarationSnippet {
         const values = [];
         for (const id of hSemiAxisSliderIds) {
             const value = /** @type {HTMLInputElement} */ (document.getElementById(id)).value;
-            values.push(parseInt(value));
+            values.push(parseFloat(value));
         }
         
         if(values[0] == values[1] && values[1] == values[2]  && values[2] == values[3]) {
@@ -80,7 +80,7 @@ export class CssDeclarationSnippet {
         const values = [];
         for (const id of vSemiAxisSliderIds) {
             const value = /** @type {HTMLInputElement} */ (document.getElementById(id)).value;
-            values.push(parseInt(value));
+            values.push(parseFloat(value));
         }
         
         if(values[0] == values[1] && values[1] == values[2]  && values[2] == values[3]) {

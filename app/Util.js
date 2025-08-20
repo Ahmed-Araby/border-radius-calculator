@@ -3,13 +3,14 @@ import { AppContext } from "./AppContext.js";
 
 export class Util {
 
+    // [TODO] remove this method
     static cssUnitToPresentationalUnnit(cssUnit) {
         switch (cssUnit) {
             case "px":
                 return "Pixels";
             case "rem":
                 return "REM";
-            case "percentage":
+            case "%":
                 return "Percentage";
             default:
                 throw new Error(`Unknown measurement unit: ${AppContext.measurementUnit}`);
@@ -30,7 +31,7 @@ export class Util {
                 return valuePX;
             case "rem":
                 return Util.pxToRem(valuePX);
-            case "percentage":
+            case "%":
                 return Util.pxToPercentage(valuePX, dimensionLengthPX);
             default:
                 throw new Error(`Unknown measurement unit: ${selectedUnit}`);
@@ -43,7 +44,7 @@ export class Util {
                 return currValue;
             case "rem":
                 return currValue * 16; // Assuming 1rem = 16px
-            case "percentage":
+            case "%":
                 return dimensionLengthPX / 100 * currValue;
             default:
                 throw new Error(`Unknown measurement unit: ${currMeasurementUnit}`);

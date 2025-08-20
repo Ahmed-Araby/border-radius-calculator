@@ -13,6 +13,7 @@
         <script type="module" src="./app/AppContext.js" defer> </script>
         <script type="module" src="./app/Util.js" defer> </script>
         <script type="module" src="./app/SemiAxisSlider.js" defer> </script>
+        <script type="module" src="./app/MeasurementUnitSpan.js" defer> </script>
         <script type="module" src="./app/CssDeclarationSnippet.js" defer> </script>
         <script type="module" src="./app/operations.js" defer> </script>
         <script type="module" src="./app/Listeners.js" defer> </script>
@@ -43,8 +44,8 @@
                                 <label class="text-preset-4" for="rem">REM</label>
                             </div>
                             <div>
-                                <input class="measurement-unit" type="radio" name="unit" value="percentage" id="percentage"> 
-                                <label class="text-preset-4" for="percentage">Percentage</label>
+                                <input class="measurement-unit" type="radio" name="unit" value="%" id="percentage"> 
+                                <label class="text-preset-4" for="%">Percentage</label>
                             </div>
                         </fieldset>
 
@@ -74,24 +75,24 @@
                             <!-- simplify the html structure and layout for the content of the ellipse-semi-axes  section -->
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-left-ellipse-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-left-ellipse-horizontal-sami-axis-slider">
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-left-ellipse-horizontal-sami-axis-slider">
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
-                                <span id="top-left-ellipse-horizontal-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span id="top-left-ellipse-horizontal-sami-axis-value">0px</span> 
+                                <span class="semi-axis-unit">px</span>
                             </div>
 
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-left-ellipse-vertical-sami-axis-slider">Vertical Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="top-left-ellipse-vertical-sami-axis-slider">     
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="top-left-ellipse-vertical-sami-axis-slider">     
                             </div>
                             <div class="semi-axis-measurement text-preset-4" >
                                 <span id="top-left-ellipse-vertical-sami-axis-value">0</span>
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
                         </div>
                         <code class="css-declaration text-preset-4">
-                            border-top-left-radius: <span id="border-top-left-radius-value">0</span>;
+                            border-top-left-radius: <span id="border-top-left-radius-value">0px</span>;
                             <button class="copy-btn ">⧉</button>
                         </code>
                     </section>
@@ -101,24 +102,24 @@
                         <div class="ellipse-semi-axes">
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-right-ellipse-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-right-ellipse-horizontal-sami-axis-slider">
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="top-right-ellipse-horizontal-sami-axis-slider">
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="top-right-ellipse-horizontal-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
 
                             <div class="slider-input">
                                 <label class="text-preset-3" for="top-right-ellipse-vertical-sami-axis-slider">Vertical Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="top-right-ellipse-vertical-sami-axis-slider">     
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="top-right-ellipse-vertical-sami-axis-slider">     
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="top-right-ellipse-vertical-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
                         </div>
                         <code class="css-declaration text-preset-4">
-                            border-top-right-radius: <span id="border-top-right-radius-value">0</span>;
+                            border-top-right-radius: <span id="border-top-right-radius-value">0px</span>;
                             <button class="copy-btn ">⧉</button>
                         </code>
                     </section>
@@ -128,24 +129,24 @@
                         <div class="ellipse-semi-axes">
                             <div class="slider-input">
                                 <label class="text-preset-3" for="bottom-right-ellipse-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="bottom-right-ellipse-horizontal-sami-axis-slider">
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="bottom-right-ellipse-horizontal-sami-axis-slider">
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="bottom-right-ellipse-horizontal-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
 
                             <div class="slider-input">
                                 <label class="text-preset-3" for="bottom-right-ellipse-vertical-sami-axis-slider">Vertical Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="bottom-right-ellipse-vertical-sami-axis-slider">     
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="bottom-right-ellipse-vertical-sami-axis-slider">     
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="bottom-right-ellipse-vertical-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
                         </div>
                         <code class="css-declaration text-preset-4">
-                            border-bottom-right-radius: <span id="border-bottom-right-radius-value">0</span>;
+                            border-bottom-right-radius: <span id="border-bottom-right-radius-value">0px</span>;
                             <button class="copy-btn ">⧉</button>
                         </code>
                     </section>
@@ -155,25 +156,25 @@
                         <div class="ellipse-semi-axes">
                             <div class="slider-input">
                                 <label class="text-preset-3" for="bottom-left-ellipse-horizontal-sami-axis-slider">Horizontal Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="bottom-left-ellipse-horizontal-sami-axis-slider">
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider h-semi-axis-slider text-preset-4" id="bottom-left-ellipse-horizontal-sami-axis-slider">
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="bottom-left-ellipse-horizontal-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
 
                             <div class="slider-input">
                                 <label class="text-preset-3" for="bottom-left-ellipse-vertical-sami-axis-slider">Vertical Semi Axis</label>
-                                <input type="range" min="0" max="300" step="1" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="bottom-left-ellipse-vertical-sami-axis-slider">     
+                                <input type="range" min="0" max="300" step="0.001" value="0" class="semi-axis-slider v-semi-axis-slider text-preset-4" id="bottom-left-ellipse-vertical-sami-axis-slider">     
                             </div>
                             <div class="semi-axis-measurement text-preset-4">
                                 <span id="bottom-left-ellipse-vertical-sami-axis-value">0</span> 
-                                <span class="semi-axis-unit">Pixel</span>
+                                <span class="semi-axis-unit">px</span>
                             </div>
                         </div>
                         <code class="css-declaration text-preset-4">
                             border-bottom-left-radius: 
-                            <span id="border-bottom-left-radius-value">0</span>;
+                            <span id="border-bottom-left-radius-value">0px</span>;
                             <button class="copy-btn ">⧉</button>
                         </code>
                     </section>
@@ -181,7 +182,7 @@
                     <!-- [TODO] adapt the style of this element when the value is long enough to trigger wrapping -->
                     <code class="css-declaration text-preset-4" >
                         border-radius:
-                        <span id="css-border-radius-declaration">0</span>;
+                        <span id="css-border-radius-declaration">0px</span>;
                         <button class="copy-btn ">⧉</button>
                     </code>
 
