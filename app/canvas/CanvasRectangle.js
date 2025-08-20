@@ -30,7 +30,7 @@ export class CanvasRectangle {
         const vSemiAxis = cornerRadiusCssValueList[cornerRadiusCssValueList.length -1];
 
         // set the new values for the corner radius CSS property
-        if(slider.getAttribute("data-semiAxis") == "h") {
+        if(slider.dataset.semiAxis == "h") {
             rect.style.setProperty(affectedCornerRadiusCssProperty, `${sliderValuePX}px ${vSemiAxis}`);
         } else {
             rect.style.setProperty(affectedCornerRadiusCssProperty, `${hSemiAxis} ${sliderValuePX}px`);
