@@ -6,7 +6,7 @@ import { CSSSelectors } from "./CSSSelectors.js";
 
 export class Operations {
     
-    static handleSemiAxisSliderChange(sliderId, newValue) {
+    static reflectSemiAxisSliderChange(sliderId, newValue) {
         ValueSpan.setValueSpan(sliderId, newValue);
         CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, newValue);
         CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
@@ -33,7 +33,7 @@ export class Operations {
 
             if(valueBeforeApplyingNewMax != valueAfterApplyingNewMax) {
                 // value has been clamped
-                Operations.handleSemiAxisSliderChange(slider.id, newMax);
+                Operations.reflectSemiAxisSliderChange(slider.id, newMax);
             }
         }
     }
@@ -49,7 +49,7 @@ export class Operations {
 
             if(valueBeforeApplyingNewMax != valueAfterApplyingNewMax) {
                 // value has been clamped
-                Operations.handleSemiAxisSliderChange(slider.id, newMax);
+                Operations.reflectSemiAxisSliderChange(slider.id, newMax);
             }
         }
     }

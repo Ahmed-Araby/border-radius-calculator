@@ -20,7 +20,7 @@ export class Listeners {
                 for(const slider of sliders) {
                     const sliderId = /** @type {HTMLInputElement} */(slider).id;
                     const value = /** @type {HTMLInputElement} */(slider).value;
-                    Operations.handleSemiAxisSliderChange(sliderId, value);
+                    Operations.reflectSemiAxisSliderChange(sliderId, value);
                 }
             });
         });
@@ -45,7 +45,7 @@ export class Listeners {
                 console.log("Semi Axis Slider Input event = ", event);
                 const sliderId = /** @type {HTMLInputElement} */(event.target).id;
                 const value = /** @type {HTMLInputElement} */(event.target).value;
-                Operations.handleSemiAxisSliderChange(sliderId, value);
+                Operations.reflectSemiAxisSliderChange(sliderId, value);
             })
         }
     }
