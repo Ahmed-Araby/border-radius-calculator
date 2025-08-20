@@ -28,14 +28,17 @@
     position: absolute;
 }
 
+#top-left, #top-right, #bottom-left, #bottom-right {
+    border-radius: 50%;
+}
 
-.top-right {
+#top-right {
     right: 0;
 }
-.bottom-right {
+#bottom-right {
     bottom: 0;
     right: 0;
 }
-.bottom-left {
+#bottom-left {
     bottom: 0;
 }
