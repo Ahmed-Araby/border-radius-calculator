@@ -1,4 +1,4 @@
-export class Mapper {
+export class IdUtil {
 
     /**
      * [Note]: The order of the Ids in the arrays is important.
@@ -44,45 +44,58 @@ export class Mapper {
         "border-bottom-left-radius-value",
     ]
 
+    static canvasEllipseIds = [
+        "top-left",
+        "top-right",
+        "bottom-right",
+        "bottom-left"
+    ]
+
     static getSibilingAxisSliderId(currSliderId) {
-        const currSliderIndex = Mapper.axisSliderIds.indexOf(currSliderId);
+        const currSliderIndex = IdUtil.axisSliderIds.indexOf(currSliderId);
         if(currSliderIndex % 2 == 0) {
-            return Mapper.axisSliderIds[currSliderIndex + 1]; // return the next slider
+            return IdUtil.axisSliderIds[currSliderIndex + 1]; // return the next slider
         } else {
-            return Mapper.axisSliderIds[currSliderIndex - 1]; // return the previous slider
+            return IdUtil.axisSliderIds[currSliderIndex - 1]; // return the previous slider
         }
     }
 
     static getCorrespondingValueSpanId(sliderId) {
-        const sliderIndex = Mapper.axisSliderIds.indexOf(sliderId);
-        return Mapper.axisValueSpanIds[sliderIndex];
+        const sliderIndex = IdUtil.axisSliderIds.indexOf(sliderId);
+        return IdUtil.axisValueSpanIds[sliderIndex];
     }
 
     static getCorrespondingIndividualBorderCodeSnippetId(sliderId) {
-        const sliderIndex = Mapper.axisSliderIds.indexOf(sliderId);
+        const sliderIndex = IdUtil.axisSliderIds.indexOf(sliderId);
         const snippetIndex = Math.floor(sliderIndex / 2);
-        return Mapper.individualBorderCodeSnippetIds[snippetIndex];
+        return IdUtil.individualBorderCodeSnippetIds[snippetIndex];
     }
 
     static getAxisSliderIndex(sliderId) {
-        return Mapper.axisSliderIds.indexOf(sliderId);
+        return IdUtil.axisSliderIds.indexOf(sliderId);
     }
 
     static getHSemiAxisSliderIds() {
         return [
-            Mapper.axisSliderIds[0], // top-left-horizontal
-            Mapper.axisSliderIds[2], // top-right-horizontal
-            Mapper.axisSliderIds[4], // bottom-right-horizontal
-            Mapper.axisSliderIds[6]  // bottom-left-horizontal
+            IdUtil.axisSliderIds[0], // top-left-horizontal
+            IdUtil.axisSliderIds[2], // top-right-horizontal
+            IdUtil.axisSliderIds[4], // bottom-right-horizontal
+            IdUtil.axisSliderIds[6]  // bottom-left-horizontal
         ];
     }
 
     static getVSemiAxisSliderIds() {
         return [
-            Mapper.axisSliderIds[1], // top-left-vertical
-            Mapper.axisSliderIds[3], // top-right-vertical
-            Mapper.axisSliderIds[5], // bottom-right-vertical
-            Mapper.axisSliderIds[7]  // bottom-left-vertical
+            IdUtil.axisSliderIds[1], // top-left-vertical
+            IdUtil.axisSliderIds[3], // top-right-vertical
+            IdUtil.axisSliderIds[5], // bottom-right-vertical
+            IdUtil.axisSliderIds[7]  // bottom-left-vertical
         ];
+    }
+
+    static getCorrespondingCanvasEllipseId(sliderId) {
+        const sliderIndex = IdUtil.axisSliderIds.indexOf(sliderId);
+        const ellipseIndex = Math.floor(sliderIndex / 2);
+        return IdUtil.canvasEllipseIds[ellipseIndex];
     }
 }

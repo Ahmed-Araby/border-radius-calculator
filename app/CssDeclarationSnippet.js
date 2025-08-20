@@ -1,13 +1,13 @@
 import { semiAxisSlider } from "./SemiAxisSlider.js";
-import { Mapper } from "./Mapper.js";
+import { IdUtil } from "./utils/IdUtil.js";
 import { AppContext } from "./AppContext.js";
-import { Util } from "./Util.js";
+import { SliderUtil } from "./utils/SliderUtil.js";
 
 export class CssDeclarationSnippet {
 
     static setCssInividualDeclarationSnippet(correspondingSliderId, correspondingSliderValue) {
-        const CssDeclarationSnippetValueId = Mapper.getCorrespondingIndividualBorderCodeSnippetId(correspondingSliderId);
-        const siblingSliderId = Mapper.getSibilingAxisSliderId(correspondingSliderId);
+        const CssDeclarationSnippetValueId = IdUtil.getCorrespondingIndividualBorderCodeSnippetId(correspondingSliderId);
+        const siblingSliderId = IdUtil.getSibilingAxisSliderId(correspondingSliderId);
         console.log(`correspondingSliderId = ${correspondingSliderId}, siblingSliderId = ${siblingSliderId}`);
         const sibilingSliderValue = semiAxisSlider.getSliderValue(siblingSliderId);
         if(correspondingSliderValue == sibilingSliderValue) {
@@ -16,7 +16,7 @@ export class CssDeclarationSnippet {
         }
 
         let hAxisValue, vAxisValue;
-        if(Util.isHAxisSlider(correspondingSliderId)) {
+        if(SliderUtil.isHAxisSlider(correspondingSliderId)) {
             hAxisValue = correspondingSliderValue;
             vAxisValue = sibilingSliderValue;
         } else {
@@ -54,7 +54,7 @@ export class CssDeclarationSnippet {
 
     static getHSemiAxisShorthandValues() {
         // top-left, top-right, bottom-right, bottom-left
-        const hSemiAxisSliderIds = Mapper.getHSemiAxisSliderIds();
+        const hSemiAxisSliderIds = IdUtil.getHSemiAxisSliderIds();
         const values = [];
         for (const id of hSemiAxisSliderIds) {
             const value = /** @type {HTMLInputElement} */ (document.getElementById(id)).value;
@@ -76,7 +76,7 @@ export class CssDeclarationSnippet {
     
     static getVSemiAxisShorthandValues() {
         // top-left, top-right, bottom-right, bottom-left
-        const vSemiAxisSliderIds = Mapper.getVSemiAxisSliderIds();
+        const vSemiAxisSliderIds = IdUtil.getVSemiAxisSliderIds();
         const values = [];
         for (const id of vSemiAxisSliderIds) {
             const value = /** @type {HTMLInputElement} */ (document.getElementById(id)).value;

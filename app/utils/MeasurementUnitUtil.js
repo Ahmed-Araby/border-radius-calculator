@@ -1,6 +1,4 @@
-import { Mapper } from "./Mapper.js";
-
-export class Util {
+export class MeasurementUnitUtil {
 
     static pxToRem(value) {
         return value / 16; // Assuming 1rem = 16px
@@ -15,9 +13,9 @@ export class Util {
             case "px":
                 return valuePX;
             case "rem":
-                return Util.pxToRem(valuePX);
+                return MeasurementUnitUtil.pxToRem(valuePX);
             case "%":
-                return Util.pxToPercentage(valuePX, dimensionLengthPX);
+                return MeasurementUnitUtil.pxToPercentage(valuePX, dimensionLengthPX);
             default:
                 throw new Error(`Unknown measurement unit: ${selectedUnit}`);
         }
@@ -37,11 +35,7 @@ export class Util {
     }
 
     static toSelectedUnit(currValue, DimensionLengthPX, currCssUnit, newCssUnit) {
-        const currValuePX = Util.toPX(currValue, currCssUnit, DimensionLengthPX);
-        return Util.pxToSelectedUnit(currValuePX, DimensionLengthPX, newCssUnit);
-    }
-
-    static isHAxisSlider(sliderId){
-        return Mapper.getAxisSliderIndex(sliderId) % 2 == 0;
+        const currValuePX = MeasurementUnitUtil.toPX(currValue, currCssUnit, DimensionLengthPX);
+        return MeasurementUnitUtil.pxToSelectedUnit(currValuePX, DimensionLengthPX, newCssUnit);
     }
 }

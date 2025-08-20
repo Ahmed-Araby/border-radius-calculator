@@ -1,6 +1,6 @@
 import { AppContext } from "./AppContext.js";
 import { CSSSelectors } from "./CSSSelectors.js";
-import { Util } from "./Util.js";
+import { MeasurementUnitUtil } from "./utils/MeasurementUnitUtil.js";
 
 export class semiAxisSlider {
 
@@ -19,8 +19,8 @@ export class semiAxisSlider {
             const currMax = /** @type HTMLInputElement */ (slider).max;
             const currValue = /** @type HTMLInputElement */ (slider).value;
 
-            const maxInNewUnit = Util.toSelectedUnit(currMax, AppContext.rect.getWidth(), AppContext.measurementUnit, newMeasurementUnit);
-            const valueInNewUnit = Util.toSelectedUnit(currValue, AppContext.rect.getWidth(), AppContext.measurementUnit, newMeasurementUnit);
+            const maxInNewUnit = MeasurementUnitUtil.toSelectedUnit(currMax, AppContext.rect.getWidth(), AppContext.measurementUnit, newMeasurementUnit);
+            const valueInNewUnit = MeasurementUnitUtil.toSelectedUnit(currValue, AppContext.rect.getWidth(), AppContext.measurementUnit, newMeasurementUnit);
 
             console.log("maxInNewUnit = ", maxInNewUnit);
             console.log("valueInNewUnit = ", valueInNewUnit);
@@ -37,8 +37,8 @@ export class semiAxisSlider {
             const currMax = /** @type HTMLInputElement */ (slider).max;
             const currValue = /** @type HTMLInputElement */ (slider).value;
 
-            const maxInNewUnit = Util.toSelectedUnit(currMax, AppContext.rect.getHeight(), AppContext.measurementUnit, newMeasurementUnit);
-            const valueInNewUnit = Util.toSelectedUnit(currValue, AppContext.rect.getHeight(), AppContext.measurementUnit, newMeasurementUnit);
+            const maxInNewUnit = MeasurementUnitUtil.toSelectedUnit(currMax, AppContext.rect.getHeight(), AppContext.measurementUnit, newMeasurementUnit);
+            const valueInNewUnit = MeasurementUnitUtil.toSelectedUnit(currValue, AppContext.rect.getHeight(), AppContext.measurementUnit, newMeasurementUnit);
 
             // max must be set first, otherwise the value set can be clapped by the browser if coverting the value to the new measurement unit scaled it beyound the current max.
             /** @type HTMLInputElement */ (slider).max = maxInNewUnit;

@@ -1,8 +1,10 @@
 import { ValueSpan } from "./ValueSpan.js";
 import { AppContext } from "./AppContext.js";
-import { Util } from "./Util.js";
+import { MeasurementUnitUtil } from "./utils/MeasurementUnitUtil.js";
 import { CssDeclarationSnippet } from "./CssDeclarationSnippet.js";
 import { CSSSelectors } from "./CSSSelectors.js";
+import { CanvasEllipse } from "./canvas/CanvasEllipse.js";
+import { CanvasRectangle } from "./canvas/CanvasRectangle.js";
 
 export class Operations {
     
@@ -10,13 +12,19 @@ export class Operations {
         ValueSpan.setValueSpan(sliderId, newValue);
         CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, newValue);
         CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
+
+        // [TODO] don't execute this method call when the measurement unit change
+        const slider = document.getElementById(sliderId);
+        CanvasEllipse.updateCorrespondingEllipse(sliderId, newValue);
+        // [TODO] update the above methods to recieve a slider
+        CanvasRectangle.setCorrespondingCornerRadius(slider);
     }
 
     static handleRectDimensionsChange(widthPX, heightPX) {
         console.log("handleRectDimensionsChange called with widthPX = ", widthPX, " and heightPX = ", heightPX);
         AppContext.rect.setDimensions(widthPX, heightPX);
-        const widthInSelectedUnit = Util.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
-        const heightInSelectedUnit = Util.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
+        const widthInSelectedUnit = MeasurementUnitUtil.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
+        const heightInSelectedUnit = MeasurementUnitUtil.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
 
         this.handleRectWidthChange(widthInSelectedUnit);
         this.handleRectHeightChange(heightInSelectedUnit);
