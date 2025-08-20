@@ -1,21 +1,6 @@
 import { Mapper } from "./Mapper.js";
-import { AppContext } from "./AppContext.js";
 
 export class Util {
-
-    // [TODO] remove this method
-    static cssUnitToPresentationalUnnit(cssUnit) {
-        switch (cssUnit) {
-            case "px":
-                return "Pixels";
-            case "rem":
-                return "REM";
-            case "%":
-                return "Percentage";
-            default:
-                throw new Error(`Unknown measurement unit: ${AppContext.measurementUnit}`);
-        }
-    }
 
     static pxToRem(value) {
         return value / 16; // Assuming 1rem = 16px
