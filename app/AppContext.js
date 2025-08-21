@@ -1,6 +1,12 @@
 import { Rectangle } from "./models/Rectangle.js";
 
 export class AppContext  {
-    static rect = new Rectangle(600, 600);
-    static measurementUnit = "px";
+    static rect;
+    static measurementUnit;
+
+    static init(rectWPX, rectHPX, measurementUnit) {
+        this.rect = new Rectangle(rectWPX, rectHPX);
+        this.measurementUnit = measurementUnit;
+    }
+    
 }
