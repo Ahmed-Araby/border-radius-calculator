@@ -2,6 +2,7 @@ export class CSSSelectors {
     static ids = {
         RECT_DIMENSION_WIDTH: "rect-width-input",
         RECT: "rect",
+        CANVAS: "canvas",
 
     };
 
