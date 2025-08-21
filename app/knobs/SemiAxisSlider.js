@@ -61,35 +61,20 @@ export class SemiAxisSlider {
         }
     }
 
-    static handleRectWidthInputChange(newWidthInSelectedUnit) {
+    static setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax) {
+        this.#setHSemiAxesMax(hSemiAxisMax);
+        this.#setVSemiAxesMax(vSemiAxisMax);
+    }
+    static #setHSemiAxesMax(max) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
         for(const slider of sliders) {
-            const newMax = newWidthInSelectedUnit / 2;
-            
-            const valueBeforeApplyingNewMax = /** @type {HTMLInputElement} */(slider).value;
-            /** @type {HTMLInputElement} */(slider).max = newMax.toString();
-            const valueAfterApplyingNewMax = /** @type {HTMLInputElement} */(slider).value;
-
-            if(valueBeforeApplyingNewMax != valueAfterApplyingNewMax) {
-                // value has been clamped
-                Operations.reflectSemiAxisSliderValueChange(slider.id, newMax);
-            }
+            /** @type {HTMLInputElement} */(slider).max = max.toString();
         }
     }
-
-    static handleRectHeightInputChange(newHeightInSelectedUnit) {
+    static #setVSemiAxesMax(max) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
         for(const slider of sliders) {
-            const newMax = newHeightInSelectedUnit / 2;
-            
-            const valueBeforeApplyingNewMax = /** @type {HTMLInputElement} */(slider).value;
-            /** @type {HTMLInputElement} */(slider).max = newMax.toString();
-            const valueAfterApplyingNewMax = /** @type {HTMLInputElement} */(slider).value;
-
-            if(valueBeforeApplyingNewMax != valueAfterApplyingNewMax) {
-                // value has been clamped
-                Operations.reflectSemiAxisSliderValueChange(slider.id, newMax);
-            }
+            /** @type {HTMLInputElement} */(slider).max = max.toString();
         }
     }
 

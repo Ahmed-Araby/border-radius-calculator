@@ -2,6 +2,8 @@ import { AppContext } from "../AppContext.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { SemiAxisSlider } from "./SemiAxisSlider.js";
+import { MathUtil } from "../utils/MathUtil.js";
+import { Operations } from "../operations.js";
 
 export class RectDimensionInput {
 
@@ -48,8 +50,11 @@ export class RectDimensionInput {
         const widthInSelectedUnit = MeasurementUnitUtil.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
         const heightInSelectedUnit = MeasurementUnitUtil.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
 
-        SemiAxisSlider.handleRectWidthInputChange(widthInSelectedUnit);
-        SemiAxisSlider.handleRectHeightInputChange(heightInSelectedUnit);
+        const hSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * widthInSelectedUnit, 3);
+        const vSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * heightInSelectedUnit, 3);
+
+        SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
+        Operations.reflectAllSemiAxesSliderValueChange();
     }
 
 }
