@@ -36,7 +36,6 @@ export class RectDimensionInput {
         rectWInput.max = rectWPX.toString();
         rectWInput.value = rectWPX.toString();
     }
-
     static setHeightMaxAndValue(rectHPX) {
         const rectHInput = /** @type HTMLInputElement */ (document.getElementById(CSSSelectors.ids.RECT_HEIGHT_INPUT));
         rectHInput.max = rectHPX.toString();
@@ -54,6 +53,7 @@ export class RectDimensionInput {
         const vSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * heightInSelectedUnit, 3);
 
         SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
+        // [TODO] optimization: only reflect for the sliders that has value changed.
         Operations.reflectAllSemiAxesSliderValueChange();
     }
 
