@@ -4,7 +4,7 @@ import { AppContext } from "../AppContext.js";
 import { semiAxisSlider } from "../SemiAxisSlider.js";
 import { MeasurementUnitSpan } from "../MeasurementUnitSpan.js";
 
-export class Listeners {
+export class KnobsEventsListener {
 
     static listenOnMeasurementUnitChange() {
         document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
