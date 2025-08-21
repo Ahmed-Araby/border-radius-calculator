@@ -4,6 +4,7 @@ import { CSSSelectors } from "../CSSSelectors.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 
 export class CanvasRectangle {
+    // [TODO] simplify this method
     static setCorrespondingCornerRadius(slider) {
         const sliderId = slider.id;
         let sliderValuePX;
