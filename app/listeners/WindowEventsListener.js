@@ -1,4 +1,4 @@
-import { CSSSelectors } from "./CSSSelectors.js";
+import { CSSSelectors } from "../CSSSelectors.js";
 
 export class WindowEventListenrs {
 

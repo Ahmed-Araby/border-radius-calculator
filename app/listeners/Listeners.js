@@ -1,8 +1,8 @@
-import { CSSSelectors } from "./CSSSelectors.js";
-import { Operations } from "./operations.js";
-import { AppContext } from "./AppContext.js";
-import { semiAxisSlider } from "./SemiAxisSlider.js";
-import { MeasurementUnitSpan } from "./MeasurementUnitSpan.js";
+import { CSSSelectors } from "../CSSSelectors.js";
+import { Operations } from "../operations.js";
+import { AppContext } from "../AppContext.js";
+import { semiAxisSlider } from "../SemiAxisSlider.js";
+import { MeasurementUnitSpan } from "../MeasurementUnitSpan.js";
 
 export class Listeners {
 

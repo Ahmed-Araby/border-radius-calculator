@@ -1,5 +1,5 @@
-import { WindowEventListenrs } from "./WindowEventsListener.js";
-import { Listeners } from "./Listeners.js";
+import { WindowEventListenrs } from "./listeners/WindowEventsListener.js";
+import { Listeners } from "./listeners/Listeners.js";
 
 console.log("init Border Radius Calculator App");
 document.addEventListener('DOMContentLoaded', () => {
