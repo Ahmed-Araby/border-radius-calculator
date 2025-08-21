@@ -3,7 +3,6 @@ import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { SemiAxisSlider } from "./SemiAxisSlider.js";
 import { MathUtil } from "../utils/MathUtil.js";
-import { Operations } from "../operations.js";
 import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
 
 export class RectDimensionInput {
@@ -55,7 +54,7 @@ export class RectDimensionInput {
 
         SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
         // [TODO] optimization: only reflect for the sliders that has value changed.
-        Operations.reflectAllSemiAxesSliderValueChange();
+        SemiAxisSlider.handleAllSemiAxesSliderValueChange();
         CanvasRectangle.setDimensions(widthPX, heightPX);
     }
 

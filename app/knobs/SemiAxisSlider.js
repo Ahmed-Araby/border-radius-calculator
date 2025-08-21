@@ -1,7 +1,10 @@
-import { Operations } from "../operations.js";
 import { AppContext } from "../AppContext.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
+import { CanvasEllipse } from "../canvas/CanvasEllipse.js";
+import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
+import { CssDeclarationSnippet } from "../CssDeclarationSnippet.js";
+import { ValueSpan } from "./ValueSpan.js";
 
 export class SemiAxisSlider {
 
@@ -76,6 +79,42 @@ export class SemiAxisSlider {
         for(const slider of sliders) {
             /** @type {HTMLInputElement} */(slider).max = max.toString();
         }
+    }
+
+
+        
+    static handleAllSemiAxesSliderValueChange() {
+        this.#handleAllHSemiAxesSliderValueChange();
+        this.#handleAllVSemiAxesSliderValueChange();
+    }
+    static #handleAllHSemiAxesSliderValueChange() {
+        const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
+        for(const slider of sliders) {
+            const sliderId = slider.id;
+            const value = /** @type {HTMLInputElement} */(slider).value;
+            this.handleSemiAxisSliderValueChange(sliderId, value);
+        }
+    }
+    static #handleAllVSemiAxesSliderValueChange() {
+        const sliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
+        for(const slider of sliders) {
+            const sliderId = slider.id;
+            const value = /** @type {HTMLInputElement} */(slider).value;
+            this.handleSemiAxisSliderValueChange(sliderId, value);
+        }
+    }
+    static handleSemiAxisSliderValueChange(sliderId, newValue) {
+        // knobs operations
+        ValueSpan.setValueSpan(sliderId, newValue);
+        CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, newValue);
+        CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
+
+        // canvas operations
+        // [TODO] don't execute this method call when the measurement unit change
+        const slider = document.getElementById(sliderId);
+        CanvasEllipse.updateCorrespondingEllipse(sliderId, newValue);
+        // [TODO] update the above methods to recieve a slider
+        CanvasRectangle.setCorrespondingCornerRadius(slider);
     }
 
 }

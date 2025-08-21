@@ -1,5 +1,4 @@
 import { CSSSelectors } from "../CSSSelectors.js";
-import { Operations } from "../operations.js";
 import { AppContext } from "../AppContext.js";
 import { SemiAxisSlider } from "../knobs/SemiAxisSlider.js";
 import { MeasurementUnitSpan } from "../MeasurementUnitSpan.js";
@@ -21,7 +20,7 @@ export class KnobsEventsListener {
                 for(const slider of sliders) {
                     const sliderId = /** @type {HTMLInputElement} */(slider).id;
                     const value = /** @type {HTMLInputElement} */(slider).value;
-                    Operations.reflectSemiAxisSliderValueChange(sliderId, value);
+                    SemiAxisSlider.handleSemiAxisSliderValueChange(sliderId, value);
                 }
             });
         });
@@ -46,7 +45,7 @@ export class KnobsEventsListener {
                 console.log("Semi Axis Slider Input event = ", event);
                 const sliderId = /** @type {HTMLInputElement} */(event.target).id;
                 const value = /** @type {HTMLInputElement} */(event.target).value;
-                Operations.reflectSemiAxisSliderValueChange(sliderId, value);
+                SemiAxisSlider.handleSemiAxisSliderValueChange(sliderId, value);
             })
         }
     }
