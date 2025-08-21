@@ -5,22 +5,19 @@ import { semiAxisSlider } from "./SemiAxisSlider.js";
 
 export class RectDimensionInput {
 
-    static restrictDimensionInput(maxWidthPX, maxHeightPX) {
+    static setDimensionsMaxAndClampValue(maxWidthPX, maxHeightPX) {
         console.log("restrict maximum dimensions to", maxWidthPX, "x", maxHeightPX);
-        this.setMaximumWidthAndClampValue(maxWidthPX);
-        this.setMaximumHeightAndClampValue(maxHeightPX);
+        this.setWidthMaxAndClampValue(maxWidthPX);
+        this.setHeightMaxAndClampValue(maxHeightPX);
     }
-
-    static setMaximumWidthAndClampValue(widthPX) {
+    static setWidthMaxAndClampValue(widthPX) {
         const elem = /** @type HTMLInputElement */(document.getElementById(CSSSelectors.ids.RECT_WIDTH_INPUT));
         elem.max = widthPX;
         if(parseFloat(elem.value) > widthPX) {
             elem.value = widthPX;
         }
     }
-
-
-    static setMaximumHeightAndClampValue(heightPX) {
+    static setHeightMaxAndClampValue(heightPX) {
         const elem = /** @type HTMLInputElement */(document.getElementById(CSSSelectors.ids.RECT_HEIGHT_INPUT));
         elem.max = heightPX;
         if(parseFloat(elem.value) > heightPX) {
@@ -43,6 +40,7 @@ export class RectDimensionInput {
         rectHInput.max = rectHPX.toString();
         rectHInput.value = rectHPX.toString();
     }
+    
 
     static handleRectDimensionsInputChange(widthPX, heightPX) {
         console.log("handleRectDimensionsChange called with widthPX = ", widthPX, " and heightPX = ", heightPX);

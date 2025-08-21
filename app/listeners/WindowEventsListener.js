@@ -1,6 +1,7 @@
 import { RectDimensionInput } from "../knobs/RectDimensionInput.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { MathUtil } from "../utils/MathUtil.js";
+import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
 
 export class WindowEventListenrs {
 
@@ -13,11 +14,12 @@ export class WindowEventListenrs {
             const canvasH = parseFloat(canvasCompStyle.height);
 
             // rect can be at most 80% of the canvas size
-            const maxRectWidth = MathUtil.restrictDecimalDigits(canvasW * 0.8, 3);
-            const maxRectHeight = MathUtil.restrictDecimalDigits(canvasH * 0.8, 3);
+            const rectWidth = MathUtil.restrictDecimalDigits(canvasW * 0.8, 3);
+            const rectHeight = MathUtil.restrictDecimalDigits(canvasH * 0.8, 3);
             
-            RectDimensionInput.restrictDimensionInput(maxRectWidth, maxRectHeight); 
-            RectDimensionInput.handleRectDimensionsInputChange(maxRectWidth, maxRectHeight);
+            RectDimensionInput.setDimensionsMaxAndClampValue(rectWidth, rectHeight); 
+            RectDimensionInput.handleRectDimensionsInputChange(rectWidth, rectHeight);
+            CanvasRectangle.clampDimensions(rectWidth, rectHeight);
         });
     }
 }

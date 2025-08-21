@@ -17,7 +17,7 @@ export class Initialize {
         RectDimensionInput.setDimensionsMaxAndValue(rectWPX, rectHPX);
 
         // initialize the canvas's rect
-        CanvasRectangle.setDimensions(rectWPX, rectHPX);
+        CanvasRectangle.clampDimensions(rectWPX, rectHPX);
         
         // initilaize semi axis sliders
         const hSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * rectWPX, 3);

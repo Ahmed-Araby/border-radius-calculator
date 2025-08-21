@@ -2,6 +2,7 @@ import { SliderUtil } from "../utils/SliderUtil.js";
 import { AppContext } from "../AppContext.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
+import { MathUtil } from "../utils/MathUtil.js";
 
 export class CanvasRectangle {
     static setCorrespondingCornerRadius(slider) {
@@ -38,9 +39,18 @@ export class CanvasRectangle {
     }
 
 
-    static setDimensions(widthPX, heightPX) {
+    static clampDimensions(widthPX, heightPX) {
         const rect = document.getElementById(CSSSelectors.ids.RECT);
-        rect.style.width = `${widthPX}px`;
-        rect.style.height = `${heightPX}px`;
+
+        const rectComputedStyle = window.getComputedStyle(rect);
+        const rectWidth = parseFloat(rectComputedStyle.width.replace("px", ""));
+        const rectHeight = parseFloat(rectComputedStyle.height.replace("px", ""));
+
+        if(rectWidth > widthPX){
+            rect.style.width = `${widthPX}px`;
+        }
+        if(rectHeight > heightPX){
+            rect.style.height = `${heightPX}px`;
+        }
     }
 }
