@@ -1,9 +1,13 @@
 import { WindowEventListenrs } from "./listeners/WindowEventsListener.js";
 import { KnobsEventsListener } from "./listeners/KnobsEventsListener.js";
+import { Initialize } from "./Initialize.js";
 
 console.log("init Border Radius Calculator App");
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
+    console.log("initiliaze app");
+    Initialize.init();
+
     console.log("register event listeners");
     KnobsEventsListener.listenOnMeasurementUnitChange();
     KnobsEventsListener.listenOnRectDimensionsChange()

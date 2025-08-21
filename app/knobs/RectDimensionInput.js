@@ -12,7 +12,7 @@ export class RectDimensionInput {
     }
 
     static setMaximumWidthAndClampValue(widthPX) {
-        const elem = /** @type HTMLInputElement */(document.getElementById(CSSSelectors.ids.RECT_DIMENSION_WIDTH));
+        const elem = /** @type HTMLInputElement */(document.getElementById(CSSSelectors.ids.RECT_WIDTH_INPUT));
         elem.max = widthPX;
         if(parseFloat(elem.value) > widthPX) {
             elem.value = widthPX;
@@ -21,11 +21,27 @@ export class RectDimensionInput {
 
 
     static setMaximumHeightAndClampValue(heightPX) {
-        const elem = /** @type HTMLInputElement */(document.getElementById(CSSSelectors.ids.RECT_DIMENSION_HEIGHT));
+        const elem = /** @type HTMLInputElement */(document.getElementById(CSSSelectors.ids.RECT_HEIGHT_INPUT));
         elem.max = heightPX;
         if(parseFloat(elem.value) > heightPX) {
             elem.value = heightPX;
         }
+    }
+
+    static setDimensionsMaxAndValue(rectWPX, rectHWPX) {
+        this.setWidthMaxAndValue(rectWPX);
+        this.setHeightMaxAndValue(rectHWPX);
+    }
+    static setWidthMaxAndValue(rectWPX) {
+        const rectWInput = /** @type HTMLInputElement */ (document.getElementById(CSSSelectors.ids.RECT_WIDTH_INPUT));
+        rectWInput.max = rectWPX.toString();
+        rectWInput.value = rectWPX.toString();
+    }
+
+    static setHeightMaxAndValue(rectHPX) {
+        const rectHInput = /** @type HTMLInputElement */ (document.getElementById(CSSSelectors.ids.RECT_HEIGHT_INPUT));
+        rectHInput.max = rectHPX.toString();
+        rectHInput.value = rectHPX.toString();
     }
 
     static handleRectDimensionsInputChange(widthPX, heightPX) {

@@ -38,5 +38,9 @@ export class CanvasRectangle {
     }
 
 
-
+    static setDimensions(widthPX, heightPX) {
+        const rect = document.getElementById(CSSSelectors.ids.RECT);
+        rect.style.width = `${widthPX}px`;
+        rect.style.height = `${heightPX}px`;
+    }
 }

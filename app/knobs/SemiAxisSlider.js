@@ -48,6 +48,25 @@ export class semiAxisSlider {
         }
     }
 
+    static setSemiAxesMaxAndValue(hSemiAxisMax, hSemiAxisValue, vSemiAxisMax, vSemiAxisValue) {
+        this.setHSemiAxesMaxAndValue(hSemiAxisMax, hSemiAxisValue);
+        this.setVSemiAxesMaxAndValue(vSemiAxisMax, vSemiAxisValue);
+    }
+    static setHSemiAxesMaxAndValue(max, value) {
+        const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
+        for(const slider of sliders) {
+            /** @type {HTMLInputElement} */(slider).max = max.toString();
+            /** @type {HTMLInputElement} */(slider).value = value.toString();
+        }
+    }
+    static setVSemiAxesMaxAndValue(max, value) {
+        const sliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
+        for(const slider of sliders) {
+            /** @type {HTMLInputElement} */(slider).max = max.toString();
+            /** @type {HTMLInputElement} */(slider).value = value.toString();
+        }
+    }
+
     static handleRectWidthInputChange(newWidthInSelectedUnit) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
         for(const slider of sliders) {
