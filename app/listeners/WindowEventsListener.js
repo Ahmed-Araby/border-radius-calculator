@@ -17,6 +17,7 @@ export class WindowEventListenrs {
             const maxRectHeight = MathUtil.restrictDecimalDigits(canvasH * 0.8, 3);
             
             RectDimensionInput.restrictDimensionInput(maxRectWidth, maxRectHeight); 
+            RectDimensionInput.handleRectDimensionsInputChange(maxRectWidth, maxRectHeight);
         });
     }
 }

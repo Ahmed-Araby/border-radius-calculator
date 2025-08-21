@@ -1,4 +1,7 @@
+import { AppContext } from "../AppContext.js";
+import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 import { CSSSelectors } from "../CSSSelectors.js";
+import { semiAxisSlider } from "./SemiAxisSlider.js";
 
 export class RectDimensionInput {
 
@@ -23,6 +26,16 @@ export class RectDimensionInput {
         if(parseFloat(elem.value) > heightPX) {
             elem.value = heightPX;
         }
+    }
+
+    static handleRectDimensionsInputChange(widthPX, heightPX) {
+        console.log("handleRectDimensionsChange called with widthPX = ", widthPX, " and heightPX = ", heightPX);
+        AppContext.rect.setDimensions(widthPX, heightPX);
+        const widthInSelectedUnit = MeasurementUnitUtil.pxToSelectedUnit(widthPX, widthPX, AppContext.measurementUnit);
+        const heightInSelectedUnit = MeasurementUnitUtil.pxToSelectedUnit(heightPX, heightPX, AppContext.measurementUnit);
+
+        semiAxisSlider.handleRectWidthInputChange(widthInSelectedUnit);
+        semiAxisSlider.handleRectHeightInputChange(heightInSelectedUnit);
     }
 
 }

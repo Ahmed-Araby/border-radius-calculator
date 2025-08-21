@@ -3,6 +3,7 @@ import { Operations } from "../operations.js";
 import { AppContext } from "../AppContext.js";
 import { semiAxisSlider } from "../knobs/SemiAxisSlider.js";
 import { MeasurementUnitSpan } from "../MeasurementUnitSpan.js";
+import { RectDimensionInput } from "../knobs/RectDimensionInput.js";
 
 export class KnobsEventsListener {
 
@@ -34,7 +35,7 @@ export class KnobsEventsListener {
             const formData = new FormData(/** @type {HTMLFormElement} */ (event.target));
             const widthPX = formData.get("width");
             const heightPX = formData.get("height");
-            Operations.handleRectDimensionsInputChange(widthPX, heightPX);
+            RectDimensionInput.handleRectDimensionsInputChange(widthPX, heightPX);
         });
     }
 
