@@ -1,4 +1,4 @@
-import { semiAxisSlider } from "./SemiAxisSlider.js";
+import { semiAxisSlider } from "./knobs/SemiAxisSlider.js";
 import { IdUtil } from "./utils/IdUtil.js";
 import { AppContext } from "./AppContext.js";
 import { SliderUtil } from "./utils/SliderUtil.js";

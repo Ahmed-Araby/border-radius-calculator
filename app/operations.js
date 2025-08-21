@@ -1,4 +1,4 @@
-import { ValueSpan } from "./ValueSpan.js";
+import { ValueSpan } from "./knobs/ValueSpan.js";
 import { AppContext } from "./AppContext.js";
 import { MeasurementUnitUtil } from "./utils/MeasurementUnitUtil.js";
 import { CssDeclarationSnippet } from "./CssDeclarationSnippet.js";
