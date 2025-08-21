@@ -1,6 +1,6 @@
-import { AppContext } from "./AppContext.js";
-import { CSSSelectors } from "./CSSSelectors.js";
-import { MeasurementUnitUtil } from "./utils/MeasurementUnitUtil.js";
+import { AppContext } from "../AppContext.js";
+import { CSSSelectors } from "../CSSSelectors.js";
+import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 
 export class semiAxisSlider {
 

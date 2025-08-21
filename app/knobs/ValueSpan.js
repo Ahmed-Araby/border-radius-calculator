@@ -1,4 +1,4 @@
-import { IdUtil } from "./utils/IdUtil.js";
+import { IdUtil } from "../utils/IdUtil.js";
 
 export class ValueSpan {
 
