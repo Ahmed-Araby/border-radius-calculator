@@ -9,10 +9,12 @@ import { CanvasRectangle } from "./canvas/CanvasRectangle.js";
 export class Operations {
     
     static reflectSemiAxisSliderChange(sliderId, newValue) {
+        // knobs operations
         ValueSpan.setValueSpan(sliderId, newValue);
         CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, newValue);
         CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
 
+        // canvas operations
         // [TODO] don't execute this method call when the measurement unit change
         const slider = document.getElementById(sliderId);
         CanvasEllipse.updateCorrespondingEllipse(sliderId, newValue);

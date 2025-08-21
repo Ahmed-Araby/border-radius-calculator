@@ -2,6 +2,7 @@ import { AppContext } from "../AppContext.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 
+// [TODO] capatilize the first letter
 export class semiAxisSlider {
 
     static getSliderValue(sliderId) {
