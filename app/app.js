@@ -1,3 +1,4 @@
+import { WindowEventListenrs } from "./WindowEventsListener.js";
 import { Listeners } from "./Listeners.js";
 
 console.log("init Border Radius Calculator App");
@@ -7,5 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Listeners.listenOnMeasurementUnitChange();
     Listeners.listenOnRectDimensionsChange()
     Listeners.listenOnSemiAxisSliderInput();
+    WindowEventListenrs.listenOnWindowResize();
 });
 
