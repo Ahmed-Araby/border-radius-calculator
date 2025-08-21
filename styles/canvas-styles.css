@@ -9,8 +9,8 @@
 
 .rect {
     box-sizing: content-box;
-    width: 600px;
-    height: 600px;
+    width: 80%;
+    height: 80%;
 
     align-self: center;
     background-color: var(--color-dark-blue-transparent);
