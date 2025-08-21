@@ -1,7 +1,7 @@
 import { CSSSelectors } from "../CSSSelectors.js";
 import { Operations } from "../operations.js";
 import { AppContext } from "../AppContext.js";
-import { semiAxisSlider } from "../knobs/SemiAxisSlider.js";
+import { SemiAxisSlider } from "../knobs/SemiAxisSlider.js";
 import { MeasurementUnitSpan } from "../MeasurementUnitSpan.js";
 import { RectDimensionInput } from "../knobs/RectDimensionInput.js";
 
@@ -13,7 +13,7 @@ export class KnobsEventsListener {
                 console.log("Measurement Unit Change event = ", event);
                 const newMeasurementUnit = /** @type {HTMLInputElement} */(event.target).value;
 
-                semiAxisSlider.adaptToMeasurementUnit(newMeasurementUnit);
+                SemiAxisSlider.adaptToMeasurementUnit(newMeasurementUnit);
 
                 AppContext.measurementUnit = newMeasurementUnit;
                 MeasurementUnitSpan.updateAllMeasurementUnitSpans(newMeasurementUnit);

@@ -3,8 +3,7 @@ import { AppContext } from "../AppContext.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 
-// [TODO] capatilize the first letter
-export class semiAxisSlider {
+export class SemiAxisSlider {
 
     static getSliderValue(sliderId) {
         return /** @type {HTMLInputElement} */(document.getElementById(sliderId)).value;
@@ -14,7 +13,6 @@ export class semiAxisSlider {
         this.adaptHSlidersToMeasurementUnit(newMeasurementUnit);
         this.adaptVSlidersToMeasurementUnit(newMeasurementUnit);
     }
-
     static adaptHSlidersToMeasurementUnit(newMeasurementUnit) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
         for (const slider of sliders) {
@@ -29,7 +27,6 @@ export class semiAxisSlider {
             /** @type HTMLInputElement */ (slider).value = valueInNewUnit;
         }
     }
-
     static adaptVSlidersToMeasurementUnit(newMeasurementUnit) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
         for (const slider of sliders) {

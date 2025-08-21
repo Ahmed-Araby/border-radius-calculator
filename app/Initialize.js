@@ -1,7 +1,7 @@
 import { CanvasRectangle } from "./canvas/CanvasRectangle.js";
 import { CSSSelectors } from "./CSSSelectors.js";
 import { RectDimensionInput } from "./knobs/RectDimensionInput.js";
-import { semiAxisSlider } from "./knobs/SemiAxisSlider.js";
+import { SemiAxisSlider } from "./knobs/SemiAxisSlider.js";
 import { MathUtil } from "./utils/MathUtil.js";
 
 export class Initialize {
@@ -22,6 +22,6 @@ export class Initialize {
         // initilaize semi axis sliders
         const hSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * rectWPX, 3);
         const vSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * rectHPX, 3);
-        semiAxisSlider.setSemiAxesMaxAndValue(hSemiAxisMax, 0, vSemiAxisMax, 0);
+        SemiAxisSlider.setSemiAxesMaxAndValue(hSemiAxisMax, 0, vSemiAxisMax, 0);
     }
 }
