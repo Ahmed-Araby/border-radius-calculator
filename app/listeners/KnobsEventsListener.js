@@ -20,7 +20,7 @@ export class KnobsEventsListener {
                 for(const slider of sliders) {
                     const sliderId = /** @type {HTMLInputElement} */(slider).id;
                     const value = /** @type {HTMLInputElement} */(slider).value;
-                    Operations.reflectSemiAxisSliderChange(sliderId, value);
+                    Operations.reflectSemiAxisSliderValueChange(sliderId, value);
                 }
             });
         });
@@ -34,7 +34,7 @@ export class KnobsEventsListener {
             const formData = new FormData(/** @type {HTMLFormElement} */ (event.target));
             const widthPX = formData.get("width");
             const heightPX = formData.get("height");
-            Operations.handleRectDimensionsChange(widthPX, heightPX);
+            Operations.handleRectDimensionsInputChange(widthPX, heightPX);
         });
     }
 
@@ -45,7 +45,7 @@ export class KnobsEventsListener {
                 console.log("Semi Axis Slider Input event = ", event);
                 const sliderId = /** @type {HTMLInputElement} */(event.target).id;
                 const value = /** @type {HTMLInputElement} */(event.target).value;
-                Operations.reflectSemiAxisSliderChange(sliderId, value);
+                Operations.reflectSemiAxisSliderValueChange(sliderId, value);
             })
         }
     }
