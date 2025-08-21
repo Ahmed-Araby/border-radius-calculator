@@ -24,9 +24,6 @@ export class semiAxisSlider {
             const maxInNewUnit = MeasurementUnitUtil.toSelectedUnit(currMax, AppContext.rect.getWidth(), AppContext.measurementUnit, newMeasurementUnit);
             const valueInNewUnit = MeasurementUnitUtil.toSelectedUnit(currValue, AppContext.rect.getWidth(), AppContext.measurementUnit, newMeasurementUnit);
 
-            console.log("maxInNewUnit = ", maxInNewUnit);
-            console.log("valueInNewUnit = ", valueInNewUnit);
-            
             // max must be set first, otherwise the value set can be clapped by the browser if coverting the value to the new measurement unit scaled it beyound the current max.
             /** @type HTMLInputElement */ (slider).max = maxInNewUnit;
             /** @type HTMLInputElement */ (slider).value = valueInNewUnit;
