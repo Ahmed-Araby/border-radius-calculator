@@ -6,7 +6,6 @@ import { CSSSelectors } from "../CSSSelectors.js";
 // but I should unify and use one approch.
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("here")
     const buttons = document.getElementsByClassName(CSSSelectors.classes.COPY_BTN);
     for(const btn of buttons) {
         btn.addEventListener("click", async (event) => {
