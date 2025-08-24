@@ -29,7 +29,7 @@ export class CssDeclarationSnippet {
     static updateCssShorthandDeclarationSnippet() {
         const hSemiAxisShorthandValues = this.getHSemiAxisShorthandValues();
         const vSemiAxisShorthandValues = this.getVSemiAxisShorthandValues();
-        const cssBorderRadiusDeclarationElement = document.getElementById("css-border-radius-declaration");
+        const cssBorderRadiusDeclarationElement = document.getElementById("border-radius-value");
         console.log("hSemiAxisShorthandValues : ", hSemiAxisShorthandValues);
         console.log("vSemiAxisShorthandValues : ", vSemiAxisShorthandValues);
 
