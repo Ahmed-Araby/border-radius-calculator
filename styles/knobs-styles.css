@@ -72,12 +72,18 @@ fieldset {
 }
 .css-declaration {
     display: block;
-    background-color: var(--color-gray);
+    position: relative;
 
+    box-sizing: content-box;
+    min-height: 2lh;
     padding: var(--spacing-50);
     margin-top: var(--spacing-50);
 
-    position: relative;
+    background-color: var(--color-gray);
+
+}
+.shorthand-border-radius-property  {
+    min-height: 3lh;
 }
 .copy-btn {
     all: initial;
@@ -91,9 +97,4 @@ fieldset {
 }
 .copy-btn:active {
     transform: scale(0.8);
-}
-
-.css-border-radius-properties {
-    margin-top: 0;
-    height: 6.5rem;
 }
