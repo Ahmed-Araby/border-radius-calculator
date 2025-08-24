@@ -12,7 +12,10 @@ export class CSSSelectors {
         RECT_DIMENSIONS_FORM: "rect-dimensions-form",
         SEMI_AXIS_SLIDER: "semi-axis-slider",
         HORIZONTAL_SEMI_AXIS_SLIDER: "h-semi-axis-slider",
-        VERTICAL_SEMI_AXIS_SLIDER: "v-semi-axis-slider"
+        VERTICAL_SEMI_AXIS_SLIDER: "v-semi-axis-slider",
+        CSS_PROPERTY: "css-property",
+        CSS_VALUE: "css-value",
+        COPY_BTN: "copy-btn"
 
     };
 
