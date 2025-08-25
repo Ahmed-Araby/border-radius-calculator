@@ -72,44 +72,47 @@ export class SemiAxisSlider {
     }
 
     static setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax) {
-        this.#setHSemiAxesMax(hSemiAxisMax);
-        this.#setVSemiAxesMax(vSemiAxisMax);
+        const clampedHSemiAxisInputIds = this.#setHSemiAxesMax(hSemiAxisMax);
+        const clampedVSemiAxisInputIds = this.#setVSemiAxesMax(vSemiAxisMax);
+        return [...clampedHSemiAxisInputIds, ...clampedVSemiAxisInputIds]
     }
     static #setHSemiAxesMax(max) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
+        const clampedInputIds = [];
         for(const slider of sliders) {
+            if(/** @type {HTMLInputElement} */(slider).value > max) {
+                clampedInputIds.push(slider.id);
+            }
             /** @type {HTMLInputElement} */(slider).max = max.toString();
         }
+        return clampedInputIds;
     }
     static #setVSemiAxesMax(max) {
         const sliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
+        const clampedInputIds = [];
         for(const slider of sliders) {
+            if(/** @type {HTMLInputElement} */(slider).value > max) {
+                clampedInputIds.push(slider.id);
+            }
             /** @type {HTMLInputElement} */(slider).max = max.toString();
         }
+        return clampedInputIds;
     }
 
 
+    static handleSemixAxesSliderValueChange(semiAxisElemIds) {
+        let idsSelector = "#" + semiAxisElemIds[0];
+        semiAxisElemIds = semiAxisElemIds.slice(1);
+        idsSelector = semiAxisElemIds.map(id => "#" + id)
+            .reduce((conc, selector) => conc += ", " + selector, idsSelector);
+        const sliders = document.querySelectorAll(idsSelector);
+        for(const slider of sliders) {
+            const sliderId = slider.id;
+            const value = /** @type {HTMLInputElement} */(slider).value;
+            this.handleSemiAxisSliderValueChange(sliderId, value);
+        }
+    }
         
-    static handleAllSemiAxesSliderValueChange() {
-        this.#handleAllHSemiAxesSliderValueChange();
-        this.#handleAllVSemiAxesSliderValueChange();
-    }
-    static #handleAllHSemiAxesSliderValueChange() {
-        const sliders = document.getElementsByClassName(CSSSelectors.classes.HORIZONTAL_SEMI_AXIS_SLIDER);
-        for(const slider of sliders) {
-            const sliderId = slider.id;
-            const value = /** @type {HTMLInputElement} */(slider).value;
-            this.handleSemiAxisSliderValueChange(sliderId, value);
-        }
-    }
-    static #handleAllVSemiAxesSliderValueChange() {
-        const sliders = document.getElementsByClassName(CSSSelectors.classes.VERTICAL_SEMI_AXIS_SLIDER);
-        for(const slider of sliders) {
-            const sliderId = slider.id;
-            const value = /** @type {HTMLInputElement} */(slider).value;
-            this.handleSemiAxisSliderValueChange(sliderId, value);
-        }
-    }
     static handleSemiAxisSliderValueChange(sliderId, newValue) {
         const slider = document.getElementById(sliderId);
 

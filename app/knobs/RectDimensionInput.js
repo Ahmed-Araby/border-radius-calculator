@@ -52,9 +52,10 @@ export class RectDimensionInput {
         const hSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * widthInSelectedUnit, 3);
         const vSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * heightInSelectedUnit, 3);
 
-        SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
-        // [TODO] optimization: only reflect for the sliders that has value changed.
-        SemiAxisSlider.handleAllSemiAxesSliderValueChange();
+        const clampedSemiAxisInputIds = SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
+        if(clampedSemiAxisInputIds.length != 0) {
+            SemiAxisSlider.handleSemixAxesSliderValueChange(clampedSemiAxisInputIds);
+        }
         CanvasRectangle.setDimensions(widthPX, heightPX);
     }
 
