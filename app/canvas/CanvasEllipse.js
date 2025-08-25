@@ -6,33 +6,23 @@ import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 export class CanvasEllipse {
 
     static updateCorrespondingEllipse(slider) {
-        const currSliderId = slider.id;
-        let currSliderValue = slider.value;
-        
-        const siblingSliderId = IdUtil.getSibilingAxisSliderId(currSliderId);
-        let siblingSliderValue = /** @type {HTMLInputElement} */(document.getElementById(siblingSliderId)).value;
-        let hSemiAxisPX;
-        let vSemiAxisPX;
+        const siblingSliderId = IdUtil.getSibilingAxisSliderId(slider.id);
+        const sibilingSlider = (document.getElementById(siblingSliderId));
 
-        if (AppContext.measurementUnit != "px" && SliderUtil.isHAxisSlider(currSliderId)) {
-            currSliderValue = MeasurementUnitUtil.toSelectedUnit(currSliderValue, AppContext.rect.getWidth(), AppContext.measurementUnit, "px");
-            siblingSliderValue = MeasurementUnitUtil.toSelectedUnit(siblingSliderValue, AppContext.rect.getHeight(), AppContext.measurementUnit, "px");
-        } else if (AppContext.measurementUnit != "px"){
-            currSliderValue = MeasurementUnitUtil.toSelectedUnit(currSliderValue, AppContext.rect.getHeight(), AppContext.measurementUnit, "px");
-            siblingSliderValue = MeasurementUnitUtil.toSelectedUnit(siblingSliderValue, AppContext.rect.getWidth(), AppContext.measurementUnit, "px");
-        }
-
-        if(SliderUtil.isHAxisSlider(currSliderId)) {
-            hSemiAxisPX = currSliderValue;
-            vSemiAxisPX = siblingSliderValue;
+        if(SliderUtil.isHAxisSlider(slider.id)) {
+            this.#updateCorrespondingEllipse(slider, sibilingSlider);
         } else {
-            hSemiAxisPX = siblingSliderValue;
-            vSemiAxisPX = currSliderValue;
+            this.#updateCorrespondingEllipse(sibilingSlider, slider);
         }
+    }
 
-        const ellipseId = IdUtil.getCorrespondingCanvasEllipseId(currSliderId);
+    static #updateCorrespondingEllipse(hSemiAxisSlider, vSemiAxisSlider) {
+        const hSmiAxisValuePX = MeasurementUnitUtil.toPX(hSemiAxisSlider.value, AppContext.measurementUnit, AppContext.rect.getWidth());
+        const vSemiAxisValuePX = MeasurementUnitUtil.toPX(vSemiAxisSlider.value, AppContext.measurementUnit, AppContext.rect.getHeight());
+
+        const ellipseId = IdUtil.getCorrespondingCanvasEllipseId(hSemiAxisSlider.id);
         const ellipse = document.getElementById(ellipseId);
-        ellipse.style.width = `${hSemiAxisPX * 2}px`;
-        ellipse.style.height = `${vSemiAxisPX * 2}px`;
+        ellipse.style.width = `${hSmiAxisValuePX * 2}px`;
+        ellipse.style.height = `${vSemiAxisValuePX * 2}px`;
     }
 }
