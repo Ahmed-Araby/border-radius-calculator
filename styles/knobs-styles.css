@@ -17,7 +17,7 @@ fieldset {
     padding: var(--spacing-50);
 }
 
-.measurement-units-container, .rect-dimensions-form {
+.measurement-units-panel, .rect-dimensions-form {
     display: flex;
     justify-content: space-evenly;
     gap: var(--spacing-50);
