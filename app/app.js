@@ -15,3 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
     WindowEventListenrs.listenOnWindowResize();
 });
 
+
+
+
+import "./CSSSelectors.js";
+import "./models/Rectangle.js";
+import "./AppContext.js";
+import "./utils/MeasurementUnitUtil.js";
+import "./utils/SliderUtil.js";
+import "./knobs/SemiAxisSlider.js";
+import "./knobs/CopyButton.js";
+import "./MeasurementUnitSpan.js";
+import "./knobs/CssShorthandBorderRadiusDeclarationSnippet.js";
+import "./knobs/CssCornerRadiusDeclarationSnippet.js";
+import "./canvas/CanvasEllipse.js";
+import "./canvas/CanvasRectangle.js";
+import "./listeners/WindowEventsListener.js";
+import "./listeners/KnobsEventsListener.js";
+import "./Initialize.js";
+import "./app.js";
