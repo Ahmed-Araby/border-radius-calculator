@@ -36,6 +36,7 @@ header {
 
 .input-label-alignment-box {
     display: flex;
+    justify-content: space-between;
     gap: var(--spacing-50);
     align-items: center;
 }

@@ -50,14 +50,9 @@ fieldset {
 /* ellipse corner */
 .ellipse-knobs {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    gap: var(--spacing-50);
+    grid-template: 1fr 1fr / auto 1fr;
+    gap: var(--spacing-50) var(--spacing-200);
     align-items: center;
-}
-
-.slider-input {
-    display: flex;
-    justify-content: space-between;
 }
 .semi-axis-slider {
     accent-color: black;
