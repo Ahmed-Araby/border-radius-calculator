@@ -5,7 +5,10 @@ import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 
 export class CanvasEllipse {
 
-    static updateCorrespondingEllipse(currSliderId, currSliderValue) {
+    static updateCorrespondingEllipse(slider) {
+        const currSliderId = slider.id;
+        let currSliderValue = slider.value;
+        
         const siblingSliderId = IdUtil.getSibilingAxisSliderId(currSliderId);
         let siblingSliderValue = /** @type {HTMLInputElement} */(document.getElementById(siblingSliderId)).value;
         let hSemiAxisPX;

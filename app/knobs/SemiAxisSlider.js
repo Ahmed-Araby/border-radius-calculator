@@ -111,9 +111,10 @@ export class SemiAxisSlider {
 
         // canvas operations
         // [TODO] don't execute this method call when the measurement unit change
-        const slider = document.getElementById(sliderId);
-        CanvasEllipse.updateCorrespondingEllipse(sliderId, newValue);
         // [TODO] update the above methods to recieve a slider
+
+        const slider = document.getElementById(sliderId);
+        CanvasEllipse.updateCorrespondingEllipse(slider);
         CanvasRectangle.setCorrespondingCornerRadius(slider);
     }
 
