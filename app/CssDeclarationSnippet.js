@@ -1,30 +1,7 @@
-import { SemiAxisSlider } from "./knobs/SemiAxisSlider.js";
 import { IdUtil } from "./utils/IdUtil.js";
 import { AppContext } from "./AppContext.js";
-import { SliderUtil } from "./utils/SliderUtil.js";
 
 export class CssDeclarationSnippet {
-
-    static setCssInividualDeclarationSnippet(correspondingSliderId, correspondingSliderValue) {
-        const CssDeclarationSnippetValueId = IdUtil.getCorrespondingIndividualBorderCodeSnippetId(correspondingSliderId);
-        const siblingSliderId = IdUtil.getSibilingAxisSliderId(correspondingSliderId);
-        console.log(`correspondingSliderId = ${correspondingSliderId}, siblingSliderId = ${siblingSliderId}`);
-        const sibilingSliderValue = SemiAxisSlider.getSliderValue(siblingSliderId);
-        if(correspondingSliderValue == sibilingSliderValue) {
-            document.getElementById(CssDeclarationSnippetValueId).innerText = `${correspondingSliderValue}${AppContext.measurementUnit}`;
-            return;
-        }
-
-        let hAxisValue, vAxisValue;
-        if(SliderUtil.isHAxisSlider(correspondingSliderId)) {
-            hAxisValue = correspondingSliderValue;
-            vAxisValue = sibilingSliderValue;
-        } else {
-            hAxisValue = sibilingSliderValue;
-            vAxisValue = correspondingSliderValue;
-        }
-        document.getElementById(CssDeclarationSnippetValueId).innerText = `${hAxisValue}${AppContext.measurementUnit} ${vAxisValue}${AppContext.measurementUnit}`;
-    }
 
     static updateCssShorthandDeclarationSnippet() {
         const hSemiAxisShorthandValues = this.getHSemiAxisShorthandValues();

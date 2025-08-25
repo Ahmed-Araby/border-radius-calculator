@@ -5,11 +5,18 @@ import { CanvasEllipse } from "../canvas/CanvasEllipse.js";
 import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
 import { CssDeclarationSnippet } from "../CssDeclarationSnippet.js";
 import { ValueSpan } from "./ValueSpan.js";
+import { IdUtil } from "../utils/IdUtil.js";
+import { CssCornerRadiusDeclarationSnippet } from "./CssCornerRadiusDeclarationSnippet.js";
 
 export class SemiAxisSlider {
 
     static getSliderValue(sliderId) {
         return /** @type {HTMLInputElement} */(document.getElementById(sliderId)).value;
+    }
+
+    static getSibilingSlider(slider) {
+        const siblingSliderId = IdUtil.getSibilingAxisSliderId(slider.id);
+        return document.getElementById(siblingSliderId);
     }
 
     static adaptToMeasurementUnit(newMeasurementUnit) {
@@ -104,16 +111,16 @@ export class SemiAxisSlider {
         }
     }
     static handleSemiAxisSliderValueChange(sliderId, newValue) {
+        const slider = document.getElementById(sliderId);
+
         // knobs operations
         ValueSpan.setValueSpan(sliderId, newValue);
-        CssDeclarationSnippet.setCssInividualDeclarationSnippet(sliderId, newValue);
+        // [TODO] update the above methods to recieve a slider
+        CssCornerRadiusDeclarationSnippet.setCssCornerRadiusDeclarationSnippet(slider);
         CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
 
         // canvas operations
         // [TODO] don't execute this method call when the measurement unit change
-        // [TODO] update the above methods to recieve a slider
-
-        const slider = document.getElementById(sliderId);
         CanvasEllipse.updateCorrespondingEllipse(slider);
         CanvasRectangle.setCorrespondingCornerRadius(slider);
     }
