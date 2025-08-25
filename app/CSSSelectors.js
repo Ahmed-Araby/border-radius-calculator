@@ -4,6 +4,7 @@ export class CSSSelectors {
         RECT_HEIGHT_INPUT: "rect-height-input",
         RECT: "rect",
         CANVAS: "canvas",
+        BORDER_RADIUS_VALUE: "border-radius-value"
 
     };
 

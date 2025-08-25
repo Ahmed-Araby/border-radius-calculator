@@ -1,35 +1,28 @@
 import { IdUtil } from "./utils/IdUtil.js";
 import { AppContext } from "./AppContext.js";
+import { CSSSelectors } from "./CSSSelectors.js";
 
 export class CssDeclarationSnippet {
 
     static updateCssShorthandDeclarationSnippet() {
-        const hSemiAxisShorthandValues = this.getHSemiAxisShorthandValues();
-        const vSemiAxisShorthandValues = this.getVSemiAxisShorthandValues();
-        const cssBorderRadiusDeclarationElement = document.getElementById("border-radius-value");
-        console.log("hSemiAxisShorthandValues : ", hSemiAxisShorthandValues);
-        console.log("vSemiAxisShorthandValues : ", vSemiAxisShorthandValues);
+        const hSemiAxisShorthandValues = this.#getHSemiAxisValues();
+        const vSemiAxisShorthandValues = this.#getVSemiAxisValues();
+        const cssBorderRadiusDeclarationElement = document.getElementById(CSSSelectors.ids.BORDER_RADIUS_VALUE);
 
-        let value = "";
-        if (this.canHAndVSemiAxisBeMerged(hSemiAxisShorthandValues, vSemiAxisShorthandValues)) {
-            for (const val of hSemiAxisShorthandValues) {
-                value += ` ${val}${AppContext.measurementUnit}`;
-            }
-        } else {
-            for (const val of hSemiAxisShorthandValues) {
-                value += ` ${val}${AppContext.measurementUnit}`;
-            }
+        let value = hSemiAxisShorthandValues
+            .map((val) => ` ${val}${AppContext.measurementUnit}`)
+            .reduce((conc, val) => conc += " " + val, "");
+
+        if (!this.#isCircularCorners(hSemiAxisShorthandValues, vSemiAxisShorthandValues)) {
             value += " / ";
-            for (const val of vSemiAxisShorthandValues) {
-                value += ` ${val}${AppContext.measurementUnit}`;
-            }
+            value = vSemiAxisShorthandValues
+            .map((val) => ` ${val}${AppContext.measurementUnit}`)
+            .reduce((conc, val) => conc += " " + val, value);
         }
-        console.log("cssBorderRadiusDeclarationElement : ", cssBorderRadiusDeclarationElement);
-        console.log("value : ", value);
         cssBorderRadiusDeclarationElement.innerText = value;
     }
 
-    static getHSemiAxisShorthandValues() {
+    static #getHSemiAxisValues() {
         // top-left, top-right, bottom-right, bottom-left
         const hSemiAxisSliderIds = IdUtil.getHSemiAxisSliderIds();
         const values = [];
@@ -51,7 +44,7 @@ export class CssDeclarationSnippet {
         return values;
     }
     
-    static getVSemiAxisShorthandValues() {
+    static #getVSemiAxisValues() {
         // top-left, top-right, bottom-right, bottom-left
         const vSemiAxisSliderIds = IdUtil.getVSemiAxisSliderIds();
         const values = [];
@@ -73,10 +66,11 @@ export class CssDeclarationSnippet {
         return values;
     }
 
-    static canHAndVSemiAxisBeMerged(hSemiAxisShorthandValues, vSemiAxisShorthandValues) {
-        if (hSemiAxisShorthandValues.length == vSemiAxisShorthandValues.length) {
-            for(let i = 0; i < hSemiAxisShorthandValues.length; i++) {
-                if (hSemiAxisShorthandValues[i] != vSemiAxisShorthandValues[i]) {
+    static #isCircularCorners(hSemiAxisValues, vSemiAxisValues) {
+        // a ccorner is circular if the ellipse h and v semi axes are equal.
+        if (hSemiAxisValues.length == vSemiAxisValues.length) {
+            for(let i = 0; i < hSemiAxisValues.length; i++) {
+                if (hSemiAxisValues[i] != vSemiAxisValues[i]) {
                     return false;
                 }
             }
