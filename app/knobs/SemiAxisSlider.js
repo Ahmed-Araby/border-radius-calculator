@@ -3,7 +3,7 @@ import { CSSSelectors } from "../CSSSelectors.js";
 import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 import { CanvasEllipse } from "../canvas/CanvasEllipse.js";
 import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
-import { CssDeclarationSnippet } from "../CssDeclarationSnippet.js";
+import { CssDeclarationSnippet } from "./CssShorthandBorderRadiusDeclarationSnippet.js";
 import { ValueSpan } from "./ValueSpan.js";
 import { IdUtil } from "../utils/IdUtil.js";
 import { CssCornerRadiusDeclarationSnippet } from "./CssCornerRadiusDeclarationSnippet.js";

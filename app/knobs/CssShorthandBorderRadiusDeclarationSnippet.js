@@ -1,6 +1,6 @@
-import { IdUtil } from "./utils/IdUtil.js";
-import { AppContext } from "./AppContext.js";
-import { CSSSelectors } from "./CSSSelectors.js";
+import { IdUtil } from "../utils/IdUtil.js";
+import { AppContext } from "../AppContext.js";
+import { CSSSelectors } from "../CSSSelectors.js";
 
 export class CssDeclarationSnippet {
 
