@@ -2,17 +2,17 @@ import { IdUtil } from "./IdUtil.js";
 
 export class SliderUtil {
     static getAffectedBorderCssProperty(slider) {
-        switch(slider.getAttribute("data-ellipse")) {
-            case "top-left":
+        switch(slider.dataset.forEllipse) {
+            case "top-left-ellipse":
                 return "border-top-left-radius";
-            case "top-right":
+            case "top-right-ellipse":
                 return "border-top-right-radius";
-            case "bottom-right":
+            case "bottom-right-ellipse":
                 return "border-bottom-right-radius";
-            case "bottom-left":
+            case "bottom-left-ellipse":
                 return "border-bottom-left-radius"; 
             default:
-                throw new Error("Unknown ellipse data attribute: " + slider.getAttribute("data-ellipse"));
+                throw new Error("Unknown ellipse data attribute: " + slider.dataset.forEllipse);
         }
     }
 

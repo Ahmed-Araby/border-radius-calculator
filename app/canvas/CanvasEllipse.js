@@ -20,7 +20,7 @@ export class CanvasEllipse {
         const hSmiAxisValuePX = MeasurementUnitUtil.toPX(hSemiAxisSlider.value, AppContext.measurementUnit, AppContext.rect.getWidth());
         const vSemiAxisValuePX = MeasurementUnitUtil.toPX(vSemiAxisSlider.value, AppContext.measurementUnit, AppContext.rect.getHeight());
 
-        const ellipseId = IdUtil.getCorrespondingCanvasEllipseId(hSemiAxisSlider.id);
+        const ellipseId = hSemiAxisSlider.dataset.forEllipse;
         const ellipse = document.getElementById(ellipseId);
         ellipse.style.width = `${hSmiAxisValuePX * 2}px`;
         ellipse.style.height = `${vSemiAxisValuePX * 2}px`;

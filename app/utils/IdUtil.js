@@ -44,13 +44,6 @@ export class IdUtil {
         "border-bottom-left-radius-value",
     ]
 
-    static canvasEllipseIds = [
-        "top-left",
-        "top-right",
-        "bottom-right",
-        "bottom-left"
-    ]
-
     static getSibilingAxisSliderId(currSliderId) {
         const currSliderIndex = IdUtil.axisSliderIds.indexOf(currSliderId);
         if(currSliderIndex % 2 == 0) {
@@ -91,11 +84,5 @@ export class IdUtil {
             IdUtil.axisSliderIds[5], // bottom-right-vertical
             IdUtil.axisSliderIds[7]  // bottom-left-vertical
         ];
-    }
-
-    static getCorrespondingCanvasEllipseId(sliderId) {
-        const sliderIndex = IdUtil.axisSliderIds.indexOf(sliderId);
-        const ellipseIndex = Math.floor(sliderIndex / 2);
-        return IdUtil.canvasEllipseIds[ellipseIndex];
     }
 }

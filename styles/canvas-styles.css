@@ -27,17 +27,17 @@
     position: absolute;
 }
 
-#top-left, #top-right, #bottom-left, #bottom-right {
+#top-left-ellipse, #top-right-ellipse, #bottom-left-ellipse, #bottom-right-ellipse {
     border-radius: 50%;
 }
 
-#top-right {
+#top-right-ellipse {
     right: 0;
 }
-#bottom-right {
+#bottom-right-ellipse {
     bottom: 0;
     right: 0;
 }
-#bottom-left {
+#bottom-left-ellipse {
     bottom: 0;
 }
