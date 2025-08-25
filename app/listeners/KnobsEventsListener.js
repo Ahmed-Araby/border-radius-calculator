@@ -18,9 +18,7 @@ export class KnobsEventsListener {
                 SemiAxisMeasurement.updateAllMeasurementsUnit(newMeasurementUnit);
                 const sliders = document.getElementsByClassName(CSSSelectors.classes.SEMI_AXIS_SLIDER);
                 for(const slider of sliders) {
-                    const sliderId = /** @type {HTMLInputElement} */(slider).id;
-                    const value = /** @type {HTMLInputElement} */(slider).value;
-                    SemiAxisSlider.handleSemiAxisSliderValueChange(sliderId, value);
+                    SemiAxisSlider.handleSemiAxisSliderValueChange(slider);
                 }
             });
         });
@@ -43,9 +41,7 @@ export class KnobsEventsListener {
         for(const slider of sliders) {
             slider.addEventListener("input", (event)=> {
                 console.log("Semi Axis Slider Input event = ", event);
-                const sliderId = /** @type {HTMLInputElement} */(event.target).id;
-                const value = /** @type {HTMLInputElement} */(event.target).value;
-                SemiAxisSlider.handleSemiAxisSliderValueChange(sliderId, value);
+                SemiAxisSlider.handleSemiAxisSliderValueChange(slider);
             })
         }
     }

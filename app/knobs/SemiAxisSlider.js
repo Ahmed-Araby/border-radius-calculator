@@ -107,22 +107,18 @@ export class SemiAxisSlider {
             .reduce((conc, selector) => conc += ", " + selector, idsSelector);
         const sliders = document.querySelectorAll(idsSelector);
         for(const slider of sliders) {
-            const sliderId = slider.id;
-            const value = /** @type {HTMLInputElement} */(slider).value;
-            this.handleSemiAxisSliderValueChange(sliderId, value);
+            this.handleSemiAxisSliderValueChange(slider);
         }
     }
         
-    static handleSemiAxisSliderValueChange(sliderId, newValue) {
-        const slider = document.getElementById(sliderId);
-
+    static handleSemiAxisSliderValueChange(slider) {
         // knobs operations
         SemiAxisMeasurement.setCorrespondingValue(slider);
         CssCornerRadiusDeclarationSnippet.setCssCornerRadiusDeclarationSnippet(slider);
         CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
 
         // canvas operations
-        // [TODO] don't execute this method call when the measurement unit change
+        // [TODO] don't execute this method call when the measurement unit change. but first solve the precision issue that happen when changing the measurement unit.
         CanvasEllipse.updateCorrespondingEllipse(slider);
         CanvasRectangle.setCorrespondingCornerRadius(slider);
     }
