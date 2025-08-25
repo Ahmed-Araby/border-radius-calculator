@@ -68,6 +68,21 @@ export class IdUtil {
         return IdUtil.axisSliderIds.indexOf(sliderId);
     }
 
+    static getSemiAxisSliderIds() {
+        return [
+            IdUtil.axisSliderIds[0], // top-left-horizontal
+            IdUtil.axisSliderIds[1], // top-left-vertical
+
+            IdUtil.axisSliderIds[2], // top-right-horizontal\
+            IdUtil.axisSliderIds[3], // top-right-vertical
+
+            IdUtil.axisSliderIds[4], // bottom-right-horizontal
+            IdUtil.axisSliderIds[5], // bottom-right-vertical
+
+            IdUtil.axisSliderIds[6],  // bottom-left-horizontal
+            IdUtil.axisSliderIds[7]  // bottom-left-vertical
+        ];
+    }
     static getHSemiAxisSliderIds() {
         return [
             IdUtil.axisSliderIds[0], // top-left-horizontal

@@ -4,6 +4,7 @@ import { CSSSelectors } from "../CSSSelectors.js";
 import { SemiAxisSlider } from "./SemiAxisSlider.js";
 import { MathUtil } from "../utils/MathUtil.js";
 import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
+import { IdUtil } from "../utils/IdUtil.js";
 
 export class RectDimensionInput {
 
@@ -52,7 +53,10 @@ export class RectDimensionInput {
         const hSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * widthInSelectedUnit, 3);
         const vSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * heightInSelectedUnit, 3);
 
-        const clampedSemiAxisInputIds = SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
+        let clampedSemiAxisInputIds = SemiAxisSlider.setAllSemiAxesMax(hSemiAxisMax, vSemiAxisMax);
+        if(AppContext.measurementUnit == "%") {
+            clampedSemiAxisInputIds = IdUtil.getSemiAxisSliderIds();
+        }
         if(clampedSemiAxisInputIds.length != 0) {
             SemiAxisSlider.handleSemixAxesSliderValueChange(clampedSemiAxisInputIds);
         }
