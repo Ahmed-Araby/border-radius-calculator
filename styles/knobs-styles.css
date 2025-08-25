@@ -1,4 +1,4 @@
-.knobs {
+.control-panel {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     gap: var(--spacing-150);
 }
 
-.knobs > *:not(:last-child) {
+.control-panel > *:not(:last-child) {
     padding-bottom: var(--spacing-50);
     border-bottom: var(--spacing-12_5) solid black;
 }
@@ -48,7 +48,7 @@ fieldset {
 }
 
 /* ellipse corner */
-.ellipse-semi-axes {
+.ellipse-knobs {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: var(--spacing-50);
