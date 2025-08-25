@@ -4,7 +4,7 @@ import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 import { CanvasEllipse } from "../canvas/CanvasEllipse.js";
 import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
 import { CssDeclarationSnippet } from "./CssShorthandBorderRadiusDeclarationSnippet.js";
-import { ValueSpan } from "./ValueSpan.js";
+import { SemiAxisMeasurement } from "./SemiAxisMeasurement.js";
 import { IdUtil } from "../utils/IdUtil.js";
 import { CssCornerRadiusDeclarationSnippet } from "./CssCornerRadiusDeclarationSnippet.js";
 
@@ -114,8 +114,7 @@ export class SemiAxisSlider {
         const slider = document.getElementById(sliderId);
 
         // knobs operations
-        ValueSpan.setValueSpan(sliderId, newValue);
-        // [TODO] update the above methods to recieve a slider
+        SemiAxisMeasurement.setCorrespondingValue(slider);
         CssCornerRadiusDeclarationSnippet.setCssCornerRadiusDeclarationSnippet(slider);
         CssDeclarationSnippet.updateCssShorthandDeclarationSnippet();
 

@@ -1,8 +1,8 @@
 import { CSSSelectors } from "../CSSSelectors.js";
 import { AppContext } from "../AppContext.js";
 import { SemiAxisSlider } from "../knobs/SemiAxisSlider.js";
-import { MeasurementUnitSpan } from "../MeasurementUnitSpan.js";
 import { RectDimensionInput } from "../knobs/RectDimensionInput.js";
+import { SemiAxisMeasurement } from "../knobs/SemiAxisMeasurement.js";
 
 export class KnobsEventsListener {
 
@@ -15,7 +15,7 @@ export class KnobsEventsListener {
                 SemiAxisSlider.adaptToMeasurementUnit(newMeasurementUnit);
 
                 AppContext.measurementUnit = newMeasurementUnit;
-                MeasurementUnitSpan.updateAllMeasurementUnitSpans(newMeasurementUnit);
+                SemiAxisMeasurement.updateAllMeasurementsUnit(newMeasurementUnit);
                 const sliders = document.getElementsByClassName(CSSSelectors.classes.SEMI_AXIS_SLIDER);
                 for(const slider of sliders) {
                     const sliderId = /** @type {HTMLInputElement} */(slider).id;

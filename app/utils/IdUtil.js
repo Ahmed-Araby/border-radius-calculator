@@ -53,7 +53,7 @@ export class IdUtil {
         }
     }
 
-    static getCorrespondingValueSpanId(sliderId) {
+    static getCorrespondingSemiAxisMeasurementValueSpanId(sliderId) {
         const sliderIndex = IdUtil.axisSliderIds.indexOf(sliderId);
         return IdUtil.axisValueSpanIds[sliderIndex];
     }
