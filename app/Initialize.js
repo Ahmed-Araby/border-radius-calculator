@@ -1,8 +1,8 @@
+import { RectDimensionInput } from "./control-panel/RectDimensionInput.js";
+import { SemiAxisSlider } from "./control-panel/SemiAxisSlider.js";
 import { AppContext } from "./AppContext.js";
 import { CanvasRectangle } from "./canvas/CanvasRectangle.js";
 import { CSSSelectors } from "./CSSSelectors.js";
-import { RectDimensionInput } from "./knobs/RectDimensionInput.js";
-import { SemiAxisSlider } from "./knobs/SemiAxisSlider.js";
 import { MathUtil } from "./utils/MathUtil.js";
 
 export class Initialize {

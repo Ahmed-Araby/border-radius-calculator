@@ -1,7 +1,7 @@
-import { SemiAxisSlider } from "../knobs/SemiAxisSlider.js";
 import { IdUtil } from "../utils/IdUtil.js";
 import { AppContext } from "../AppContext.js";
 import { SliderUtil } from "../utils/SliderUtil.js";
+import { SemiAxisSlider } from "./SemiAxisSlider.js";
 
 export class CssCornerRadiusDeclarationSnippet {
 

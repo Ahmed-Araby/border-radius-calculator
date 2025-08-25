@@ -1,8 +1,8 @@
 import { CSSSelectors } from "../CSSSelectors.js";
 import { AppContext } from "../AppContext.js";
-import { SemiAxisSlider } from "../knobs/SemiAxisSlider.js";
-import { RectDimensionInput } from "../knobs/RectDimensionInput.js";
-import { SemiAxisMeasurement } from "../knobs/SemiAxisMeasurement.js";
+import { RectDimensionInput } from "../control-panel/RectDimensionInput.js";
+import { SemiAxisMeasurement } from "../control-panel/SemiAxisMeasurement.js";
+import { SemiAxisSlider } from "../control-panel/SemiAxisSlider.js";
 
 export class KnobsEventsListener {
 

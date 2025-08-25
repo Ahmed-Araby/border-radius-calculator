@@ -1,8 +1,8 @@
-import { RectDimensionInput } from "../knobs/RectDimensionInput.js";
 import { CSSSelectors } from "../CSSSelectors.js";
 import { MathUtil } from "../utils/MathUtil.js";
 import { CanvasRectangle } from "../canvas/CanvasRectangle.js";
 import { AppContext } from "../AppContext.js";
+import { RectDimensionInput } from "../control-panel/RectDimensionInput.js";
 
 export class WindowEventListenrs {
 
