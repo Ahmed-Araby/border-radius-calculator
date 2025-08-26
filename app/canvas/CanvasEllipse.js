@@ -5,6 +5,13 @@ import { MeasurementUnitUtil } from "../utils/MeasurementUnitUtil.js";
 
 export class CanvasEllipse {
 
+    static hideEllipse(ellipseId) {
+        document.getElementById(ellipseId).style.visibility = "hidden";
+    }
+    static showEllipse(ellipseId) {
+        document.getElementById(ellipseId).style.visibility = "visible";
+    }
+
     static updateCorrespondingEllipse(slider) {
         const siblingSliderId = IdUtil.getSibilingAxisSliderId(slider.id);
         const sibilingSlider = (document.getElementById(siblingSliderId));

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     KnobsEventsListener.listenOnMeasurementUnitChange();
     KnobsEventsListener.listenOnRectDimensionsChange()
     KnobsEventsListener.listenOnSemiAxisSliderInput();
+    KnobsEventsListener.listenOnHideEllipsesCheckboxChange();
     WindowEventListenrs.listenOnWindowResize();
 });
 

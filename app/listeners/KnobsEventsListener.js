@@ -3,6 +3,7 @@ import { AppContext } from "../AppContext.js";
 import { RectDimensionInput } from "../control-panel/RectDimensionInput.js";
 import { SemiAxisMeasurement } from "../control-panel/SemiAxisMeasurement.js";
 import { SemiAxisSlider } from "../control-panel/SemiAxisSlider.js";
+import { HideEllipsesCheckbox } from "../control-panel/HideEllipsesCheckbox.js";
 
 export class KnobsEventsListener {
 
@@ -44,6 +45,12 @@ export class KnobsEventsListener {
                 SemiAxisSlider.handleSemiAxisSliderValueChange(slider);
             })
         }
+    }
+
+    static listenOnHideEllipsesCheckboxChange() {
+        document.getElementById(CSSSelectors.ids.CORNER_ELLIPSES_VISIBILITY_CHECKBOX).addEventListener("change", (event)=> {
+            HideEllipsesCheckbox.changeEllipsesVisibility(event);
+        })
     }
 }
 

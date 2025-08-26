@@ -46,7 +46,12 @@ fieldset {
     background-color: white;
     border: var(--spacing-12_5) solid black;
 }
-
+/* corner ellipses visivility */
+input[type=checkbox] {
+    accent-color: black;
+    width: 1.3rem;
+    height: 1.3rem;
+}
 /* ellipse corner */
 .ellipse-knobs {
     display: grid;
