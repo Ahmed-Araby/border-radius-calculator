@@ -41,7 +41,7 @@ header {
     align-items: center;
 }
 
-.v-line {
+.split-line {
     width: var(--spacing-12_5);
     margin-inline: var(--spacing-150);
     background-color: black;
@@ -51,4 +51,17 @@ header {
     height: 6rem; /* 144px */
     padding: var(--spacing-150) 0;
     text-align: center;
+}
+
+@media (width < 1200px) { 
+    .split-screen {
+        flex-direction: column;
+        gap: var(--spacing-100);
+    }
+
+    .split-line {
+        height: var(--spacing-12_5);
+        width: auto;
+    }
+
 }
