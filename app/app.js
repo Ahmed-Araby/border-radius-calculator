@@ -1,5 +1,5 @@
 import { WindowEventListenrs } from "./listeners/WindowEventsListener.js";
-import { KnobsEventsListener } from "./listeners/KnobsEventsListener.js";
+import { ControlPanelEventsListener } from "./listeners/ControlPanelEventsListener.js";
 import { Initialize } from "./Initialize.js";
 
 console.log("init Border Radius Calculator App");
@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     Initialize.init();
 
     console.log("register event listeners");
-    KnobsEventsListener.listenOnMeasurementUnitChange();
-    KnobsEventsListener.listenOnRectDimensionsChange()
-    KnobsEventsListener.listenOnSemiAxisSliderInput();
-    KnobsEventsListener.listenOnHideEllipsesCheckboxChange();
+    ControlPanelEventsListener.listenOnMeasurementUnitChange();
+    ControlPanelEventsListener.listenOnRectDimensionsChange()
+    ControlPanelEventsListener.listenOnSemiAxisSliderInput();
+    ControlPanelEventsListener.listenOnHideEllipsesCheckboxChange();
     WindowEventListenrs.listenOnWindowResize();
 });
 
@@ -31,6 +31,6 @@ import "./control-panel/CssCornerRadiusDeclarationSnippet.js";
 import "./canvas/CanvasEllipse.js";
 import "./canvas/CanvasRectangle.js";
 import "./listeners/WindowEventsListener.js";
-import "./listeners/KnobsEventsListener.js";
+import "./listeners/ControlPanelEventsListener.js";
 import "./Initialize.js";
 import "./app.js";

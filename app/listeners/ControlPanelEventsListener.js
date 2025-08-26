@@ -5,7 +5,7 @@ import { SemiAxisMeasurement } from "../control-panel/SemiAxisMeasurement.js";
 import { SemiAxisSlider } from "../control-panel/SemiAxisSlider.js";
 import { HideEllipsesCheckbox } from "../control-panel/HideEllipsesCheckbox.js";
 
-export class KnobsEventsListener {
+export class ControlPanelEventsListener {
 
     static listenOnMeasurementUnitChange() {
         document.querySelectorAll(CSSSelectors.attributes.MEASUREMENT_UNIT_RADIO_BUTTONS).forEach((radioButton) => {
