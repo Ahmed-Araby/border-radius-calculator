@@ -12,8 +12,8 @@ export class Initialize {
         const canvasWPX = parseFloat(window.getComputedStyle(canvas).width);
         const canvasHPX = parseFloat(window.getComputedStyle(canvas).height);
 
-        const rectWPX = Math.max(490, MathUtil.restrictDecimalDigits(0.8 * canvasWPX, 3));
-        const rectHPX = Math.max(490, MathUtil.restrictDecimalDigits(0.8 * canvasHPX, 3));
+        const rectWPX = MathUtil.restrictDecimalDigits(0.8 * canvasWPX, 3);
+        const rectHPX = MathUtil.restrictDecimalDigits(0.8 * canvasHPX, 3);
 
         AppContext.init(rectWPX, rectHPX, "px");
 
