@@ -125,9 +125,14 @@ input[type=checkbox] {
         min-height: 1lh;
     }
     .control-panel > *:not(:last-child) {
-        padding-bottom: var(--spacing-50);
         border: none;
     }
+    .control-panel > *:nth-child(2), 
+    .control-panel > *:nth-child(3) {
+        border-bottom: var(--spacing-12_5) solid black;
+        margin-bottom: var(--spacing-50);
+    }
+    
     .semi-axis-measurement {
         width: 5rem; /* 80px, can fit up to 6 digits along with decimal point */ 
     }
