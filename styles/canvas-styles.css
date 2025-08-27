@@ -8,8 +8,6 @@
 
 .rect {
     box-sizing: content-box;
-    width: 80%;
-    height: 80%;
 
     align-self: center;
     background-color: var(--color-dark-blue-transparent);
