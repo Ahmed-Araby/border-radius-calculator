@@ -80,7 +80,6 @@ input[type=checkbox] {
     position: relative;
 
     box-sizing: content-box;
-    min-height: 2lh;
     padding: var(--spacing-50) var(--spacing-200) var(--spacing-50) var(--spacing-50);
     margin-top: var(--spacing-50);
 
@@ -88,7 +87,7 @@ input[type=checkbox] {
 
 }
 .shorthand-border-radius-property  {
-    min-height: 3lh;
+    min-height: 2lh;
 }
 .copy-btn {
     all: initial;
