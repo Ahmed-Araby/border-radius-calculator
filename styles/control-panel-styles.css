@@ -68,7 +68,10 @@ input[type=checkbox] {
     justify-self: end;
     text-align: end;
 
-    min-width: 10rem; /* 160px, can fit up to 5 digits along with the measurement unit */ 
+    width: 10rem; /* 160px, can fit up to 5 digits along with the measurement unit */ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     border: var(--spacing-12_5) solid black;
     padding: var(--spacing-50);
 }
@@ -124,7 +127,7 @@ input[type=checkbox] {
         border: none;
     }
     .semi-axis-measurement {
-        min-width: 5rem; /* 80px, can fit up to 6 digits along with decimal point */ 
+        width: 5rem; /* 80px, can fit up to 6 digits along with decimal point */ 
     }
     .css-declaration:not(.shorthand-border-radius-property) {
         /* [TODO] stop updating the css corner readius properties using JS code */
