@@ -53,9 +53,7 @@ header {
 @media (width < 1220px) { 
     .split-screen {
         min-width: min-content;
-        
         flex-direction: column;
-        gap: var(--spacing-100);
     }
 
     .split-line {
