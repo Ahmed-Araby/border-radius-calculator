@@ -107,7 +107,8 @@ input[type=checkbox] {
 @media (width < 1220px) {
     .control-panel {
         width: auto;
-        
+        min-width: min-content;
+
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
