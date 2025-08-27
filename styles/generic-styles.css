@@ -29,6 +29,7 @@ header {
     min-block-size: 80vb; 
     display: flex;
     padding: var(--spacing-150);
+    gap: var(--spacing-150);
 }
 
 .input-label-alignment-box {
@@ -40,7 +41,6 @@ header {
 
 .split-line {
     width: var(--spacing-12_5);
-    margin-inline: var(--spacing-150);
     background-color: black;
 }
 
