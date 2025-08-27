@@ -41,6 +41,7 @@ header {
 
 .split-line {
     width: var(--spacing-12_5);
+    flex-shrink: 0;
     background-color: black;
 }
 
