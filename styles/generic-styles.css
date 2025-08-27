@@ -9,6 +9,7 @@ html {
     scrollbar-gutter: stable;
 }
 body {
+    /* [TODO] investigate the need for these dimensions constraints */
     max-inline-size: 100%;
     min-block-size: 100vb;
 }
@@ -29,6 +30,7 @@ header {
 .split-screen {
     display: flex;
 
+    /* [TODO] investigate the need for these dimensions constraints */
     min-block-size: 100vb;
     max-inline-size: 100%;
     padding: var(--spacing-150);
