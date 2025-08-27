@@ -19,7 +19,7 @@ export class Initialize {
 
         RectDimensionInput.setDimensionsMaxAndValue(rectWPX, rectHPX);
         
-        // CanvasRectangle.setDimensions(rectWPX, rectHPX);
+        CanvasRectangle.setDimensions(rectWPX, rectHPX);
         
         const hSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * rectWPX, 3);
         const vSemiAxisMax = MathUtil.restrictDecimalDigits(0.5 * rectHPX, 3);
