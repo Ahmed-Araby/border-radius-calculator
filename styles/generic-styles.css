@@ -25,6 +25,8 @@ header {
     height: 4rem; /* 64px */
 }
 .split-screen {
+    /** setting min-block-size prevents the split screen from shrinking vertically when the flex direction is column */
+    min-block-size: 80vb; 
     display: flex;
     padding: var(--spacing-150);
 }
@@ -52,7 +54,6 @@ header {
     .split-screen {
         flex-direction: column;
         gap: var(--spacing-100);
-        
     }
 
     .split-line {
